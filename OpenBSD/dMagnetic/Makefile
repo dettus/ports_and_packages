@@ -1,0 +1,31 @@
+# $Id$
+
+COMMENT =		A Magnetic Scrolls Interpreter
+V =			0.12
+DISTNAME =		dMagnetic_${V}
+PKGNAME =		dmagnetic-${V}
+CATEGORIES =		games
+
+HOMEPAGE =		http://www.dettus.net/dMagnetic/
+MAINTAINER =		Thomas Dettbarn <dettus@dettus.net>
+
+# BSD-2
+PERMIT_PACKAGE_CDROM =	Yes
+
+MASTER_SITES =		http://www.dettus.net/dMagnetic/
+
+WANTLIB =		c
+MAKE_FLAGS =		CC="${CC}" CFLAGS="${CFLAGS}"
+
+NO_TEST =		Yes
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/dMagnetic ${PREFIX}/bin/dMagnetic
+	${INSTALL_MAN} ${WRKSRC}/dMagnetic.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/dMagneticini.5 ${PREFIX}/man/man5
+	${INSTALL_DATA_DIR} ${PREFIX}/share/dMagnetic
+	${INSTALL_DATA} ${WRKSRC}/dMagnetic.ini ${PREFIX}/share/dMagnetic
+	${INSTALL_DATA} ${WRKSRC}/LICENSE.txt ${PREFIX}/share/dMagnetic
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${PREFIX}/share/dMagnetic
+
+.include <bsd.port.mk>
