@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 @bin bin/dMagnetic
 @man man/man1/dMagnetic.1
 @man man/man5/dMagneticini.5

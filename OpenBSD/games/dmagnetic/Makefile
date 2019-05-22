@@ -1,23 +1,24 @@
-# $Id$
+# $OpenBSD$
 
-COMMENT =		A Magnetic Scrolls Interpreter
-V =			0.12
-DISTNAME =		dMagnetic_${V}
-PKGNAME =		dmagnetic-${V}
-CATEGORIES =		games
+V =		0.12
+COMMENT =	interpreter for Magnetic Scrolls games
+DISTNAME =	dMagnetic_${V}
+PKGNAME =	dmagnetic-${V}
+CATEGORIES =	games
 
-HOMEPAGE =		http://www.dettus.net/dMagnetic/
-MAINTAINER =		Thomas Dettbarn <dettus@dettus.net>
+HOMEPAGE =	http://www.dettus.net/dMagnetic/
+MAINTAINER =	Thomas Dettbarn <dettus@dettus.net>
 
-# BSD-2
+# BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		http://www.dettus.net/dMagnetic/
+WANTLIB += c
 
-WANTLIB =		c
-MAKE_FLAGS =		CC="${CC}" CFLAGS="${CFLAGS}"
+MASTER_SITES =	http://www.dettus.net/dMagnetic/
 
-NO_TEST =		Yes
+MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS}"
+
+NO_TEST =	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dMagnetic ${PREFIX}/bin/dMagnetic
