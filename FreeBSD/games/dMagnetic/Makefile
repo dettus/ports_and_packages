@@ -2,7 +2,7 @@
 # $Id$
 
 PORTNAME=	dMagnetic
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	games
 MASTER_SITES=	http://www.dettus.net/dMagnetic/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
