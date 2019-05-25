@@ -1,15 +1,17 @@
 Source: dmagnetic
-Section: unknown
+Section: games
 Priority: optional
-Maintainer: dettus <dettus@unknown>
-Build-Depends: debhelper (>= 10)
-Standards-Version: 4.1.2
-Homepage: <insert the upstream URL, if relevant>
-#Vcs-Git: https://anonscm.debian.org/git/collab-maint/dmagnetic.git
-#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/dmagnetic.git
+Maintainer: Thomas Dettbarn <dettus@dettus.net>
+Build-Depends: debhelper (>=9)
+Standards-Version: 3.9.8
+Homepage: http://www.dettus.net/dMagnetic/
 
 Package: dmagnetic
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: A Magnetic Scrolls Interpreter
+ dMagnetic is a Magnetic Scrolls Interpreter. It allows to play classic text 
+ adventures such as "The Pawn", "The Guild of Thieves", "Fish!", "Jinxter",
+ "Myth", "Corruption" and "Wonderland" in a terminal window. The beautiful
+ graphics are being rendered in glorious ANSI art. 
