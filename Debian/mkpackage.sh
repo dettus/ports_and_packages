@@ -8,6 +8,10 @@ cd dmagnetic-0.13
 dh_make
 rm -rf debian
 cp -r ../debian .
+for I in `cat debian/patches/series`
+do
+	patch -p0 <debian/patches/$I
+done
 #debuild
 #quilt (to create the makefile patch)
 debian/rules clean
