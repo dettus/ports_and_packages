@@ -8,7 +8,11 @@ tar cvfz dmagnetic_0.13.orig.tar.gz dmagnetic-0.13
 #dh_make
 #debuild
 #quilt (to create the makefile patch)
-cp -r debian/dmagnetic-0.13
+cp -r debian dmagnetic-0.13
+cd dmagnetic-0.13
+debian/rules build
+fakeroot debian/rules binary
+
 
 
 
