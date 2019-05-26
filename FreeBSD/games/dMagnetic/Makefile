@@ -1,5 +1,4 @@
 # $FreeBSD$
-# Created by: Thomas Dettbarn
 
 PORTNAME=	dMagnetic
 PORTVERSION=	0.13
