@@ -1,4 +1,4 @@
-# $FreeBSD$
+# $FreeBSD: head/games/dMagnetic/Makefile 502747 2019-05-26 19:23:56Z swills $
 
 PORTNAME=	dMagnetic
 PORTVERSION=	0.14
@@ -10,21 +10,15 @@ MAINTAINER=	dettus@dettus.net
 COMMENT=	Magnetic Scrolls Interpreter
 
 LICENSE=	BSD2CLAUSE
-
-MANPAGE1=	dMagnetic.1
-MANPAGE5=	dMagneticini.5
-DATADIR=	${PREFIX}/share/dMagnetic/
-DATA1=		README.txt
-DATA2=		LICENSE.txt
-DATA3=		dMagnetic.ini
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MANPAGE1} ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/${MANPAGE5} ${STAGEDIR}${MANPREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/dMagnetic.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/dMagneticini.5 ${STAGEDIR}${MANPREFIX}/man/man5
 	${MKDIR} ${STAGEDIR}/${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/${DATA1} ${STAGEDIR}/${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/${DATA2} ${STAGEDIR}/${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/${DATA3} ${STAGEDIR}/${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/dMagnetic.ini ${STAGEDIR}/${DATADIR}
+	${MKDIR} ${STAGEDIR}/${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${STAGEDIR}/${DOCSDIR}
 
 .include <bsd.port.mk>
