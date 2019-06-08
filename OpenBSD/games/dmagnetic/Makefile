@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-V =		0.14
+V =		0.15
 COMMENT =	interpreter for Magnetic Scrolls games
 DISTNAME =	dMagnetic_${V}
 PKGNAME =	dmagnetic-${V}
