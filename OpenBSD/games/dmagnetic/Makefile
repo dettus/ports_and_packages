@@ -10,7 +10,7 @@ HOMEPAGE =	http://www.dettus.net/dMagnetic/
 MAINTAINER =	Thomas Dettbarn <dettus@dettus.net>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 
