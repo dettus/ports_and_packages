@@ -28,7 +28,7 @@ echo "Priority: optional"
 echo "Architecture: all"
 echo "Essential: no"
 echo -n "Installed-Size: "
-du -scb dmagnetic_0.16/usr | tail -n 1 | awk -F" " '{ print $1; }' -
+du -scb dmagnetic-0.16/usr | tail -n 1 | awk -F" " '{ print $1; }' -
 echo "Maintainer: Thomas Dettbarn <dettus@dettus.net>"
 echo "Description: A Magnetic Scrolls Interpreter"
 echo " dMagnetic- A Magnetic Scrolls Interpreter allows you to play"
