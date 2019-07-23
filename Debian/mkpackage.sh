@@ -47,7 +47,9 @@ do
 done
 ) >dmagnetic_0.16-1.dsc
 cd dmagnetic-0.16
-dh_make
+
+debuild
+#dh_make
 rm -rf debian
 cp -r ../debian .
 pwd
