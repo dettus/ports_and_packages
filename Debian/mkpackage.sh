@@ -12,46 +12,48 @@ mv dMagnetic_0.16 dmagnetic-0.16
 tar cvfz dmagnetic_0.16.orig.tar.gz dmagnetic-0.16
 tar cvfJ dmagnetic_0.16-1.debian.tar.xz debian
 
-(
-echo -n "Format: " ; cat debian/source/format
-echo "Source: dmagnetic"
-echo "Binary: dmagnetic"
-echo "Architecture: any"
-echo "Version: 0.16-1"
-grep "^Maintainer" debian/control
-echo "Uploaders: Thomas Dettbarn <dettus@dettus.net>"
-grep "^Homepage" debian/control
-grep "^Standards-Version" debian/control
-grep "^Build-Depends" debian/control
-echo "Package-List:"
-echo " dmagnetic deb games optional arch=any"
-echo "Checksums-Sha1:"
-for I in dmagnetic_0.16.orig.tar.gz dmagnetic_0.16-1.debian.tar.xz
-do
-	echo -n " "`sha1sum $I | awk -F" " '{ print $1; }' -`" "
-	echo `wc -c $I`
-done
-
-echo "Checksums-Sha256:"
-for I in dmagnetic_0.16.orig.tar.gz dmagnetic_0.16-1.debian.tar.xz
-do
-	echo -n " "`sha256sum $I | awk -F" " '{ print $1; }' -`" "
-	echo `wc -c $I`
-done
-
-echo "Files:"
-for I in dmagnetic_0.16.orig.tar.gz dmagnetic_0.16-1.debian.tar.xz
-do
-	echo -n " "`md5sum $I | awk -F" " '{ print $1; }' -`" "
-	echo `wc -c $I`
-done
-) >dmagnetic_0.16-1.dsc
-
+###(
+###echo -n "Format: " ; cat debian/source/format
+###echo "Source: dmagnetic"
+###echo "Binary: dmagnetic"
+###echo "Architecture: any"
+###echo "Version: 0.16-1"
+###grep "^Maintainer" debian/control
+###echo "Uploaders: Thomas Dettbarn <dettus@dettus.net>"
+###grep "^Homepage" debian/control
+###grep "^Standards-Version" debian/control
+###grep "^Build-Depends" debian/control
+###echo "Package-List:"
+###echo " dmagnetic deb games optional arch=any"
+###echo "Checksums-Sha1:"
+###for I in dmagnetic_0.16.orig.tar.gz dmagnetic_0.16-1.debian.tar.xz
+###do
+###	echo -n " "`sha1sum $I | awk -F" " '{ print $1; }' -`" "
+###	echo `wc -c $I`
+###done
+###
+###echo "Checksums-Sha256:"
+###for I in dmagnetic_0.16.orig.tar.gz dmagnetic_0.16-1.debian.tar.xz
+###do
+###	echo -n " "`sha256sum $I | awk -F" " '{ print $1; }' -`" "
+###	echo `wc -c $I`
+###done
+###
+###echo "Files:"
+###for I in dmagnetic_0.16.orig.tar.gz dmagnetic_0.16-1.debian.tar.xz
+###do
+###	echo -n " "`md5sum $I | awk -F" " '{ print $1; }' -`" "
+###	echo `wc -c $I`
+###done
+###) >/tmp/dmagnetic_0.16-1.dsc
+###
 cd dmagnetic-0.16
 pwd
 rm -rf debian
 cp -r ../debian .
-debuild -uc -us
+#debuild -uc -us
+debuild
+debsign dmagnetic_0.16-1_amd64.changes
 #dh_make
 
 #for I in `cat debian/patches/series`
