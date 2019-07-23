@@ -51,13 +51,13 @@ cd dmagnetic-0.16
 pwd
 rm -rf debian
 cp -r ../debian .
-debuild
+debuild -uc -us
 #dh_make
 
-for I in `cat debian/patches/series`
-do
-	cat debian/patches/$I | patch
-done
+#for I in `cat debian/patches/series`
+#do
+#	cat debian/patches/$I | patch
+#done
 #debuild
 #quilt (to create the makefile patch)
 #debian/rules clean

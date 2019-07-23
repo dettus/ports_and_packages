@@ -10,7 +10,7 @@ Replaced the BSD-style variable name PREFIX in the makefile with DESTDIR.
 -INSTALLSHARE=$(PREFIX)/share/games
 -INSTALLMAN=$(PREFIX)/share/man
 +DESTDIR?=/usr/local
-+INSTALLBIN=$(DESTDIR)/bin
++INSTALLBIN=$(DESTDIR)/games
 +INSTALLSHARE=$(DESTDIR)/share/games
 +INSTALLMAN=$(DESTDIR)/share/man
  

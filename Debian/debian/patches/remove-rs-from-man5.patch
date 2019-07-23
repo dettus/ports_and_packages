@@ -1,0 +1,148 @@
+--- a/dMagneticini.5	2019-07-23 20:02:31.243832326 +0200
++++ b/dMagneticini.5	2019-07-23 20:03:11.194841132 +0200
+@@ -41,11 +41,9 @@
+ Comments start with a ;
+ .Pp
+ To use a ; in an entry, it has to be preceeded by a backslash
+-.RS
+ \\;
+ .br
+ Consequently, using a backslash requires preceeding it with  a backslash as well.
+-.RS
+ \\\\
+ .Pp
+ .El
+@@ -53,13 +51,10 @@
+ Like any .ini file, it is broken down into sections, each section contains entries. One section has to be [FILES]. It should contain the names of the game binaries, so that the game engine can find them.
+ For example:
+ .br
+-.RS
+ [FILES]
+ .br
+-.RS
+ pawnmag=/usr/local/share/games/magneticscrolls/pawn.mag
+ .br
+-.RS
+ pawngfx=/home/games/magneticscrolls/pawn.gfx
+ .Pp
+ The .mag and .gfx packages can be downloaded from https://msmemorial.if-legends.org/memorial.php, btw.
+@@ -68,40 +63,28 @@
+ This section is configuring the default output Interface. 
+ .Pp
+ .br
+-.RS
+ [DEFAULTGUI]
+ .br
+-.RS
+ rows=40
+ .br
+-.RS
+ columns=100
+ .br
+-.RS
+ ;align=left
+ .br
+-.RS
+ align=block
+ .br
+-.RS
+ ;align=right
+ .br
+-.RS
+ ;mode=none
+ .br
+-.RS
+ ;mode=monochrome
+ .br
+-.RS
+ ;mode=low_ansi
+ .br
+-.RS
+ mode=high_ansi
+ .br
+-.RS
+ low_ansi_characters=\\\\/=|\\;
+ .br
+-.RS
+ monochrome_characters= .:-=+*x#@$X
+ .Pp
+ Changing the numbers of rows will make pictures longer, changing the number of columns makes them wider. To change the output mode, comment it in, and comment the current one out.
+@@ -115,78 +98,54 @@
+ .br
+ [FILES]
+ .br
+-.RS
+ pawnmag=/usr/local/share/games/magneticscrolls/pawn.mag
+ .br
+-.RS
+ pawngfx=/usr/local/share/games/magneticscrolls/pawn.gfx
+ .br
+-.RS
+ guildmag=/usr/local/share/games/magneticscrolls/guild.mag
+ .br
+-.RS
+ guildgfx=/usr/local/share/games/magneticscrolls/guild.gfx
+ .br
+-.RS
+ jinxtermag=/usr/local/share/games/magneticscrolls/jinxter.mag
+ .br
+-.RS
+ jinxtergfx=/usr/local/share/games/magneticscrolls/jinxter.gfx
+ .br
+-.RS
+ corruptionmag=/usr/local/share/games/magneticscrolls/ccorrupt.mag
+ .br
+-.RS
+ corruptiongfx=/usr/local/share/games/magneticscrolls/ccorrupt.gfx
+ .br
+-.RS
+ fishmag=/usr/local/share/games/magneticscrolls/fish.mag
+ .br
+-.RS
+ fishgfx=/usr/local/share/games/magneticscrolls/fish.gfx
+ .br
+-.RS
+ mythmag=/usr/local/share/games/magneticscrolls/myth.mag
+ .br
+-.RS
+ mythgfx=/usr/local/share/games/magneticscrolls/myth.gfx
+ .br
+-.RS
+ wonderlandmag=/usr/local/share/games/magneticscrolls/wonder.mag
+ .br
+-.RS
+ wonderlandgfx=/usr/local/share/games/magneticscrolls/wonder.gfx
+ .br
+ .br
+ .br
+-.RS
+ [DEFAULTGUI]
+ .br
+-.RS
+ rows=40
+ .br
+-.RS
+ columns=120
+ .br
+-.RS
+ ;align=left
+ .br
+-.RS
+ align=block
+ .br
+-.RS
+ ;align=right
+ .br
+-.RS
+ ;mode=none
+ .br
+-.RS
+ ;mode=monochrome
+ .br
+-.RS
+ ;mode=low_ansi
+ .br
+-.RS
+ mode=high_ansi
+ .Pp
+ .Sh BUGS
