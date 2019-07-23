@@ -1,2 +1,2 @@
-?package(dmagnetic):needs="text" section="Applications/Games"\
-  title="dmagnetic" command="/usr/bin/dMagnetic"
+?package(dmagnetic):needs="text" section="Games"\
+  title="dmagnetic" command="/usr/games/dMagnetic"

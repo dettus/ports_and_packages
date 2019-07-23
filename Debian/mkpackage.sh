@@ -46,13 +46,13 @@ do
 	echo `wc -c $I`
 done
 ) >dmagnetic_0.16-1.dsc
-cd dmagnetic-0.16
 
-debuild
-#dh_make
+cd dmagnetic-0.16
+pwd
 rm -rf debian
 cp -r ../debian .
-pwd
+debuild
+#dh_make
 
 for I in `cat debian/patches/series`
 do
