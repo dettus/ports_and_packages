@@ -1,0 +1,2 @@
+?package(dmagnetic):needs="text" section="Applications/Games"\
+  title="dmagnetic" command="/usr/bin/dMagnetic"
