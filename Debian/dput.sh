@@ -12,4 +12,5 @@ progress_indicator = 2
 allowed_distributions = .*
 " >$HOME/.dput.cf
 
+dput mentors dmagnetic_0.16-1_amd64.changes
 
