@@ -1,5 +1,13 @@
+dmagnetic (0.17-1) UNRELEASED; urgency=low
+
+  * Update to release 0.17.
+
+ -- Thomas Dettbarn <dettus@dettus.net>  Tue, 28 Jul 2019 12:08:30 +0200
+
 dmagnetic (0.16-1) UNRELEASED; urgency=low
 
   * Initial release. Closes: #929619
 
  -- Thomas Dettbarn <dettus@dettus.net>  Tue, 23 Jul 2019 12:13:30 +0200
+
+

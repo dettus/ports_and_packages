@@ -1,5 +1,10 @@
 #!/bin/sh
 
+wget http://www.dettus.net/dMagnetic/dMagnetic_0.17.tar.gz
+sha256sum dMagnetic_0.17.tar.gz
+ls -l dMagnetic_0.17.tar.gz
+
+
 mkdir svnserver
 cd svnserver
 svn checkout svn://svn.FreeBSD.org/ports/head/games
