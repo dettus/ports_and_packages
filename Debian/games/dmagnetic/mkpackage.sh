@@ -10,14 +10,14 @@ wget -c http://www.dettus.net/dMagnetic/dMagnetic_0.17.tar.gz
 tar xvfz dMagnetic_0.17.tar.gz
 mv dMagnetic_0.17 dmagnetic-0.17
 tar cvfz dmagnetic_0.17.orig.tar.gz dmagnetic-0.17
-tar cvfJ dmagnetic_0.17-2.debian.tar.xz debian
+tar cvfJ dmagnetic_0.17-3.debian.tar.xz debian
 
 ###(
 ###echo -n "Format: " ; cat debian/source/format
 ###echo "Source: dmagnetic"
 ###echo "Binary: dmagnetic"
 ###echo "Architecture: any"
-###echo "Version: 0.17-2"
+###echo "Version: 0.17-3"
 ###grep "^Maintainer" debian/control
 ###echo "Uploaders: Thomas Dettbarn <dettus@dettus.net>"
 ###grep "^Homepage" debian/control
@@ -26,26 +26,26 @@ tar cvfJ dmagnetic_0.17-2.debian.tar.xz debian
 ###echo "Package-List:"
 ###echo " dmagnetic deb games optional arch=any"
 ###echo "Checksums-Sha1:"
-###for I in dmagnetic_0.17.orig.tar.gz dmagnetic_0.17-2.debian.tar.xz
+###for I in dmagnetic_0.17.orig.tar.gz dmagnetic_0.17-3.debian.tar.xz
 ###do
 ###	echo -n " "`sha1sum $I | awk -F" " '{ print $1; }' -`" "
 ###	echo `wc -c $I`
 ###done
 ###
 ###echo "Checksums-Sha256:"
-###for I in dmagnetic_0.17.orig.tar.gz dmagnetic_0.17-2.debian.tar.xz
+###for I in dmagnetic_0.17.orig.tar.gz dmagnetic_0.17-3.debian.tar.xz
 ###do
 ###	echo -n " "`sha256sum $I | awk -F" " '{ print $1; }' -`" "
 ###	echo `wc -c $I`
 ###done
 ###
 ###echo "Files:"
-###for I in dmagnetic_0.17.orig.tar.gz dmagnetic_0.17-2.debian.tar.xz
+###for I in dmagnetic_0.17.orig.tar.gz dmagnetic_0.17-3.debian.tar.xz
 ###do
 ###	echo -n " "`md5sum $I | awk -F" " '{ print $1; }' -`" "
 ###	echo `wc -c $I`
 ###done
-###) >/tmp/dmagnetic_0.17-2.dsc
+###) >/tmp/dmagnetic_0.17-3.dsc
 ###
 cd dmagnetic-0.17
 pwd
@@ -54,7 +54,7 @@ cp -r ../debian .
 #debuild -uc -us
 debuild
 cd ..
-debsign dmagnetic_0.17-2_amd64.changes
+debsign dmagnetic_0.17-3_amd64.changes
 #dh_make
 
 #for I in `cat debian/patches/series`

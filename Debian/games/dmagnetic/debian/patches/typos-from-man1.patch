@@ -1,0 +1,11 @@
+--- a/dMagnetic.1	2019-07-28 11:35:21.000000000 +0200
++++ b/dMagnetic.1	2019-08-28 23:26:12.358983644 +0200
+@@ -63,7 +63,7 @@
+ .Op Fl bsd
+ .Sh DESCRIPTION
+ .Nm
+-is an interpeter for classic text adventure games, or interactive fiction, such as "The Pawn" or "The Guild of Thieves". The following games are being supported:
++is an interpreter for classic text adventure games, or interactive fiction, such as "The Pawn" or "The Guild of Thieves". The following games are being supported:
+ .Bl -tag -width 10
+ .It "The Pawn"
+ .It "The Guild of Thieves"

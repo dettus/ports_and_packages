@@ -1,0 +1,11 @@
+--- a/dMagneticini.5	2019-07-28 11:35:21.000000000 +0200
++++ b/dMagneticini.5	2019-08-28 23:25:54.010948647 +0200
+@@ -40,7 +40,7 @@
+ .
+ Comments start with a ;
+ .Pp
+-To use a ; in an entry, it has to be preceeded by a backslash
++To use a ; in an entry, it has to be preceded by a backslash
+ .RS
+ \\;
+ .br

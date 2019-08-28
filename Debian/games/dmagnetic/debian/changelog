@@ -1,3 +1,9 @@
+dmagnetic (0.17-3) UNRELEASED; urgency=low
+
+  * Removed more warnings from the mentors.debian.net site.
+
+ -- Thomas Dettbarn <dettus@dettus.net>  Wed, 28 Aug 2019 23:20:30 +0200
+
 dmagnetic (0.17-2) UNRELEASED; urgency=low
 
   * Removed some warnings from the mentors.debian.net site.
