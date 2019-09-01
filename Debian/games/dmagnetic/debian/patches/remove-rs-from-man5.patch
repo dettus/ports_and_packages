@@ -8,7 +8,7 @@ Apparently, Debian does not like the RS inits manpages.
 -.RS
  \\;
  .br
- Consequently, using a backslash requires preceeding it with  a backslash as well.
+ Consequently, using a backslash requires preceding it with a backslash as well.
 -.RS
  \\\\
  .Pp

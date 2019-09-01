@@ -1,7 +1,7 @@
-This one is removing a typo from dMagneticini.5.
---- a/dMagneticini.5	2019-07-28 11:35:21.000000000 +0200
-+++ b/dMagneticini.5	2019-08-28 23:25:54.010948647 +0200
-@@ -40,7 +40,7 @@
+This one is handling some typos.
+--- a/dMagneticini.5	2019-09-01 12:47:30.292929424 +0200
++++ b/dMagneticini.5	2019-09-01 12:48:13.330982893 +0200
+@@ -40,11 +40,11 @@
  .
  Comments start with a ;
  .Pp
@@ -10,3 +10,8 @@ This one is removing a typo from dMagneticini.5.
  .RS
  \\;
  .br
+-Consequently, using a backslash requires preceeding it with  a backslash as well.
++Consequently, using a backslash requires preceding it with a backslash as well.
+ .RS
+ \\\\
+ .Pp
