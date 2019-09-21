@@ -1,0 +1,12 @@
+dwz likes to have debuginfos. ah well...
+--- a/Makefile	2019-09-21 13:31:27.979683030 +0200
++++ b/Makefile	2019-09-21 13:31:38.195713003 +0200
+@@ -30,7 +30,7 @@
+ CC?=gcc
+ AR?=ar
+ #CFLAGS=-g
+-CFLAGS?=-O3
++CFLAGS?=-O3 -g
+ CFLAGS+=-Wall
+ #CFLAGS+=-Werror
+ PROJ_HOME=./

@@ -3,3 +3,4 @@ typos-from-man1.patch
 typos-from-man5.patch
 remove-rs-from-man5.patch
 makefile-nomoretxt.patch
+makefile-nostrip.patch

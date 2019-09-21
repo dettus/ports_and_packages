@@ -1,0 +1,11 @@
+dwz does not like stripped binaries.
+--- a/Makefile	2019-09-21 13:36:59.264653991 +0200
++++ b/Makefile	2019-09-21 13:37:05.032670898 +0200
+@@ -63,7 +63,6 @@
+ OBJ_TOPLEVEL=${SOURCES_TOPLEVEL:.c=.o}
+ 
+ all:	dMagnetic
+-	strip dMagnetic
+ 
+ clean:
+ 	rm -rf dMagnetic
