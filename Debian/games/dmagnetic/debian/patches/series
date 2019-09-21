@@ -1,6 +1,3 @@
-fix-dmagnetic-destdir.patch
-typos-from-man1.patch
-typos-from-man5.patch
-remove-rs-from-man5.patch
-makefile-nomoretxt.patch
-makefile-nostrip.patch
+makefile.patch
+dmagnetic_1.patch
+dmagneticini_5.patch

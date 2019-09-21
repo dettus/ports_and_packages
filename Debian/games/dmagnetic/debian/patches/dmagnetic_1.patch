@@ -1,6 +1,6 @@
-This one is removing a typo from manpage 1.
---- a/dMagnetic.1	2019-07-28 11:35:21.000000000 +0200
-+++ b/dMagnetic.1	2019-08-28 23:26:12.358983644 +0200
+This patch removes some typos from the dMagnetic(1) manpage.
+--- a/dMagnetic.1	2019-09-21 13:41:01.365363341 +0200
++++ b/dMagnetic.1	2019-09-21 13:42:20.069593940 +0200
 @@ -63,7 +63,7 @@
  .Op Fl bsd
  .Sh DESCRIPTION

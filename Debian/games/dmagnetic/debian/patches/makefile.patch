@@ -1,0 +1,37 @@
+this patch changes the makefile from a BSD-style one into a DEBIAN-style one.
+--- a/Makefile	2019-09-21 13:40:41.545305268 +0200
++++ b/Makefile	2019-09-21 13:42:37.417644769 +0200
+@@ -22,10 +22,10 @@
+ #OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+ #OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+-PREFIX?=/usr/local
+-INSTALLBIN=$(PREFIX)/bin
+-INSTALLSHARE=$(PREFIX)/share/games
+-INSTALLMAN=$(PREFIX)/share/man
++DESTDIR?=/usr/local
++INSTALLBIN=$(DESTDIR)/games
++INSTALLSHARE=$(DESTDIR)/share/games
++INSTALLMAN=$(DESTDIR)/share/man
+ 
+ CC?=gcc
+ AR?=ar
+@@ -63,7 +63,6 @@
+ OBJ_TOPLEVEL=${SOURCES_TOPLEVEL:.c=.o}
+ 
+ all:	dMagnetic
+-	strip dMagnetic
+ 
+ clean:
+ 	rm -rf dMagnetic
+@@ -81,8 +80,8 @@
+ 	cp dMagnetic $(INSTALLBIN)
+ 	cp dMagnetic.1 $(INSTALLMAN)/man1
+ 	cp dMagneticini.5 $(INSTALLMAN)/man5
+-	cp README.txt $(INSTALLSHARE)/dMagnetic
+-	cp LICENSE.txt $(INSTALLSHARE)/dMagnetic
++	#cp README.txt $(INSTALLSHARE)/dMagnetic
++	#cp LICENSE.txt $(INSTALLSHARE)/dMagnetic
+ 	cp dMagnetic.ini $(INSTALLSHARE)/dMagnetic
+ 
+ 

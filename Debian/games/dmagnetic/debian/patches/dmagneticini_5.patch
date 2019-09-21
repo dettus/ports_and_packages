@@ -1,15 +1,18 @@
-Apparently, Debian does not like the RS inits manpages.
---- a/dMagneticini.5	2019-07-23 20:02:31.243832326 +0200
-+++ b/dMagneticini.5	2019-07-23 20:03:11.194841132 +0200
-@@ -41,11 +41,9 @@
+This patch removes some typos from the dMagneticini(5) manpage.
+--- a/dMagneticini.5	2019-09-21 13:41:08.701384831 +0200
++++ b/dMagneticini.5	2019-09-21 13:42:31.329626931 +0200
+@@ -40,12 +40,10 @@
+ .
  Comments start with a ;
  .Pp
- To use a ; in an entry, it has to be preceded by a backslash
+-To use a ; in an entry, it has to be preceeded by a backslash
 -.RS
++To use a ; in an entry, it has to be preceded by a backslash
  \\;
  .br
- Consequently, using a backslash requires preceding it with a backslash as well.
+-Consequently, using a backslash requires preceeding it with  a backslash as well.
 -.RS
++Consequently, using a backslash requires preceding it with a backslash as well.
  \\\\
  .Pp
  .El
