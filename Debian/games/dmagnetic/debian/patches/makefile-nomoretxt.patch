@@ -1,0 +1,16 @@
+Debian does not like it when redundant textfiles are
+being installed. This patche removes them from the
+controverey.
+--- a/Makefile	2019-09-20 09:33:03.883343647 +0200
++++ b/Makefile	2019-09-20 09:33:36.433115207 +0200
+@@ -81,8 +81,8 @@
+ 	cp dMagnetic $(INSTALLBIN)
+ 	cp dMagnetic.1 $(INSTALLMAN)/man1
+ 	cp dMagneticini.5 $(INSTALLMAN)/man5
+-	cp README.txt $(INSTALLSHARE)/dMagnetic
+-	cp LICENSE.txt $(INSTALLSHARE)/dMagnetic
++	#cp README.txt $(INSTALLSHARE)/dMagnetic
++	#cp LICENSE.txt $(INSTALLSHARE)/dMagnetic
+ 	cp dMagnetic.ini $(INSTALLSHARE)/dMagnetic
+ 
+ 
