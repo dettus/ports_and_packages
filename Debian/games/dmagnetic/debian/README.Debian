@@ -1,10 +1,10 @@
 dmagnetic for Debian
 
-dMagnetic- A Magnetic Scrolls Interpreter
+dMagnetic- Play classic textadventures from Magnetic Scrolls in glorious ANSI Art
   
  dMagnetic is a Magnetic Scrolls Interpreter. It allows one to play classic
  text adventures such as "The Pawn", "The Guild of Thieves", "Fish!", "Myth",
  "Jinxter", "Corruption" and "Wonderland" in a terminal window. The beautiful
  graphics are being rendered in glorious ANSI art. 
 
- -- Thomas Dettbarn <dettus@dettus.net>  Wed, 28 Aug 2019 23:23:52 +0200
+ -- Thomas Dettbarn <dettus@dettus.net>  Sat, 28 Sep 2019 13:03:58 +0200
