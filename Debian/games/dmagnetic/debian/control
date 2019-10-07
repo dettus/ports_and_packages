@@ -3,7 +3,7 @@ Section: games
 Priority: optional
 Maintainer: Thomas Dettbarn <dettus@dettus.net>
 Build-Depends: debhelper (>=12)
-Standards-Version: 4.3.0
+Standards-Version: 4.4.0
 Homepage: http://www.dettus.net/dMagnetic/
 
 Package: dmagnetic

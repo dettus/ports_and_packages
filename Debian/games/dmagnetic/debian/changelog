@@ -3,8 +3,9 @@ dmagnetic (0.17-1) unstable; urgency=low
   * Update to release 0.17.
   * Removed some warnings from the mentors.debian.net site.
   * Changed the compat level to 12.
+  * Changed the standards version to 4.4.0
 
- -- Thomas Dettbarn <dettus@dettus.net>  Sun, 22 Sep 2019 08:25:30 +0200
+ -- Thomas Dettbarn <dettus@dettus.net>  Mon, 07 Oct 2019 07:37:59 +0200
 
 dmagnetic (0.16-1) UNRELEASED; urgency=low
 
