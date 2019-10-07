@@ -3,6 +3,7 @@ Section: games
 Priority: optional
 Maintainer: Thomas Dettbarn <dettus@dettus.net>
 Build-Depends: debhelper (>=12)
+Rules-Requires-Root: no
 Standards-Version: 4.4.0
 Homepage: http://www.dettus.net/dMagnetic/
 
@@ -10,7 +11,6 @@ Package: dmagnetic
 Architecture: any
 Multi-Arch: foreign
 Depends: ${shlibs:Depends},${misc:Depends}
-Rules-Requires-Root: binary-targets
 Description: Play classic textadventures from Magnetic Scrolls in glorious ANSI Art.
  dMagnetic is a Magnetic Scrolls Interpreter. It allows one to play classic
  text adventures such as "The Pawn", "The Guild of Thieves", "Fish!", "Myth",
