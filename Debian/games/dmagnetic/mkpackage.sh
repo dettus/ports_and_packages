@@ -6,7 +6,7 @@ rm -rf dmagnetic-0.17
 
 
 
-wget -c http://www.dettus.net/dMagnetic/dMagnetic_0.17.tar.gz
+wget -c https://www.dettus.net/dMagnetic/dMagnetic_0.17.tar.gz
 tar xvfz dMagnetic_0.17.tar.gz
 mv dMagnetic_0.17 dmagnetic-0.17
 tar cvfz dmagnetic_0.17.orig.tar.gz dmagnetic-0.17
