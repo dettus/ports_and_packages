@@ -3,7 +3,7 @@
 PORTNAME=	dMagnetic
 PORTVERSION=	0.17
 CATEGORIES=	games
-MASTER_SITES=	http://www.dettus.net/dMagnetic/
+MASTER_SITES=	https://www.dettus.net/dMagnetic/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	dettus@dettus.net
