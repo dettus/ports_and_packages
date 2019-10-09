@@ -1,6 +1,7 @@
-Patches the Makefile from BSD style to Debian style.
---- a/Makefile	2019-10-09 09:35:29.330145157 +0200
-+++ b/Makefile	2019-10-09 09:36:52.841883845 +0200
+This one converts the BSD-style Makefile into a DEBIAN-style Makefile.
+Enjoy!
+--- a/Makefile	2019-10-09 10:03:03.753776615 +0200
++++ b/Makefile	2019-10-09 10:03:34.822482506 +0200
 @@ -22,10 +22,10 @@
  #OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
  #OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
@@ -16,6 +17,15 @@ Patches the Makefile from BSD style to Debian style.
  
  CC?=gcc
  AR?=ar
+@@ -37,7 +37,7 @@
+ INCFLAGS=-I$(PROJ_HOME)src/gui -I$(PROJ_HOME)src/toplevel -I$(PROJ_HOME)src/engine/vm68k -I$(PROJ_HOME)src/engine/linea -I$(PROJ_HOME)src/engine/include
+ OBJDIR=$(PROJ_HOME)obj/
+ LINK=$(CC)
+-LDFLAGS="-L"$(OBJDIR)
++LDFLAGS+="-L"$(OBJDIR)
+ 
+ SOURCES_LINEA=	\
+ 	src/engine/linea/gfx1loader.c	\
 @@ -63,7 +63,6 @@
  OBJ_TOPLEVEL=${SOURCES_TOPLEVEL:.c=.o}
  
