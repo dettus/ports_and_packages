@@ -1,6 +1,6 @@
-this patch changes the makefile from a BSD-style one into a DEBIAN-style one.
---- a/Makefile	2019-09-21 13:40:41.545305268 +0200
-+++ b/Makefile	2019-09-21 13:42:37.417644769 +0200
+Patches the Makefile from BSD style to Debian style.
+--- a/Makefile	2019-10-09 09:35:29.330145157 +0200
++++ b/Makefile	2019-10-09 09:36:52.841883845 +0200
 @@ -22,10 +22,10 @@
  #OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
  #OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
@@ -24,7 +24,7 @@ this patch changes the makefile from a BSD-style one into a DEBIAN-style one.
  
  clean:
  	rm -rf dMagnetic
-@@ -81,8 +80,8 @@
+@@ -81,14 +80,14 @@
  	cp dMagnetic $(INSTALLBIN)
  	cp dMagnetic.1 $(INSTALLMAN)/man1
  	cp dMagneticini.5 $(INSTALLMAN)/man5
@@ -34,4 +34,12 @@ this patch changes the makefile from a BSD-style one into a DEBIAN-style one.
 +	#cp LICENSE.txt $(INSTALLSHARE)/dMagnetic
  	cp dMagnetic.ini $(INSTALLSHARE)/dMagnetic
  
+ 
+ dMagnetic:	$(OBJ_LINEA) $(OBJ_VM68K) $(OBJ_GUI) $(OBJ_TOPLEVEL)
+-	$(LINK) -o $@ $(OBJ_LINEA) $(OBJ_VM68K) $(OBJ_GUI) $(OBJ_TOPLEVEL)
++	$(LINK) $(LDFLAGS) -o $@ $(OBJ_LINEA) $(OBJ_VM68K) $(OBJ_GUI) $(OBJ_TOPLEVEL)
+ 
+ .c.o:
+-	$(CC) $(CFLAGS) $(CFLAGS_EXTRA) $(INCFLAGS) -c -o $@ $<
++	$(CC) $(CPPFLAGS) $(CFLAGS) $(CFLAGS_EXTRA) $(INCFLAGS) -c -o $@ $<
  
