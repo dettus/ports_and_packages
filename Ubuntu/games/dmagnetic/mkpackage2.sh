@@ -14,7 +14,12 @@ wget -c http://www.dettus.net/dMagnetic/dMagnetic_0.17.tar.gz
 
 bzr dh-make dmagnetic 0.17 dMagnetic_0.17.tar.gz
 cd dmagnetic
+
+echo "--------------------------------"
 rm -rf debian 
-cp -r ../debian_ubuntu debian
+cp -vr ../debian_ubuntu debian
+echo "--------------------------------"
+bzr add debian/source/format
+bzr commit -m "Initial commit of Ubuntu packaging."
 bzr builddeb -- -us -uc
 
