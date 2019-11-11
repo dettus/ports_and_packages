@@ -8,7 +8,7 @@ rm -rf dmagnetic-0.18
 
 wget -c https://www.dettus.net/dMagnetic/dMagnetic_0.18.tar.gz
 tar xvfz dMagnetic_0.18.tar.gz
-mv dMagnetic_0.18 dmagnetic-0.17
+mv dMagnetic_0.18 dmagnetic-0.18
 tar cvfz dmagnetic_0.18.orig.tar.gz dmagnetic-0.18
 tar cvfJ dmagnetic_0.18-1.debian.tar.xz debian
 
