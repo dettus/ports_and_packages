@@ -1,8 +1,8 @@
 #!/bin/sh
 
-wget http://www.dettus.net/dMagnetic/dMagnetic_0.17.tar.gz
-sha256sum dMagnetic_0.17.tar.gz
-ls -l dMagnetic_0.17.tar.gz
+wget http://www.dettus.net/dMagnetic/dMagnetic_0.18.tar.gz
+sha256sum dMagnetic_0.18.tar.gz
+ls -l dMagnetic_0.18.tar.gz
 
 
 mkdir svnserver
