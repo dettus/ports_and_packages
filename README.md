@@ -14,6 +14,9 @@ svn checkout svn://svn.FreeBSD.org/ports/head/games
 
 go to https://bugs.freebsd.org/bugzilla/, upload it and attach the patch.
 
+"setting the maintainer-approval flag to + on the submitted patch will speed
+up the processing/triggering".
+
 
 OpenBSD: Mail to ports@openbsd.org
 cvs -qd anoncvs@anoncvs.ca.openbsd.org:/cvs checkout -P ports
