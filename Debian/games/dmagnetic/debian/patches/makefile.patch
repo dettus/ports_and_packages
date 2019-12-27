@@ -1,7 +1,7 @@
 This one converts the BSD-style Makefile into a DEBIAN-style Makefile.
 Enjoy!
---- a/Makefile	2019-10-09 10:03:03.753776615 +0200
-+++ b/Makefile	2019-10-09 10:03:34.822482506 +0200
+--- a/Makefile	2019-12-27 21:30:06.949894953 +0100
++++ b/Makefile	2019-12-27 21:32:23.570659082 +0100
 @@ -22,10 +22,10 @@
  #OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
  #OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
@@ -11,22 +11,22 @@ Enjoy!
 -INSTALLSHARE=$(PREFIX)/share/games
 -INSTALLMAN=$(PREFIX)/share/man
 +DESTDIR?=/usr/local
-+INSTALLBIN=$(DESTDIR)/games
++INSTALLBIN=$(DESTDIR)/bin
 +INSTALLSHARE=$(DESTDIR)/share/games
 +INSTALLMAN=$(DESTDIR)/share/man
  
  CC?=gcc
  AR?=ar
 @@ -37,7 +37,7 @@
- INCFLAGS=-I$(PROJ_HOME)src/gui -I$(PROJ_HOME)src/toplevel -I$(PROJ_HOME)src/engine/vm68k -I$(PROJ_HOME)src/engine/linea -I$(PROJ_HOME)src/engine/include
+ INCFLAGS=-I$(PROJ_HOME)src/gui -I$(PROJ_HOME)src/toplevel -I$(PROJ_HOME)src/loader -I$(PROJ_HOME)src/engine/vm68k -I$(PROJ_HOME)src/engine/linea -I$(PROJ_HOME)src/engine/include 
  OBJDIR=$(PROJ_HOME)obj/
  LINK=$(CC)
 -LDFLAGS="-L"$(OBJDIR)
 +LDFLAGS+="-L"$(OBJDIR)
  
- SOURCES_LINEA=	\
- 	src/engine/linea/gfx1loader.c	\
-@@ -63,7 +63,6 @@
+ SOURCES_LOADER=	\
+ 	src/loader/maggfxloader.c
+@@ -67,7 +67,6 @@
  OBJ_TOPLEVEL=${SOURCES_TOPLEVEL:.c=.o}
  
  all:	dMagnetic
@@ -34,7 +34,7 @@ Enjoy!
  
  clean:
  	rm -rf dMagnetic
-@@ -81,14 +80,14 @@
+@@ -86,14 +85,14 @@
  	cp dMagnetic $(INSTALLBIN)
  	cp dMagnetic.1 $(INSTALLMAN)/man1
  	cp dMagneticini.5 $(INSTALLMAN)/man5
@@ -45,9 +45,9 @@ Enjoy!
  	cp dMagnetic.ini $(INSTALLSHARE)/dMagnetic
  
  
- dMagnetic:	$(OBJ_LINEA) $(OBJ_VM68K) $(OBJ_GUI) $(OBJ_TOPLEVEL)
--	$(LINK) -o $@ $(OBJ_LINEA) $(OBJ_VM68K) $(OBJ_GUI) $(OBJ_TOPLEVEL)
-+	$(LINK) $(LDFLAGS) -o $@ $(OBJ_LINEA) $(OBJ_VM68K) $(OBJ_GUI) $(OBJ_TOPLEVEL)
+ dMagnetic:	$(OBJ_LOADER) $(OBJ_LINEA) $(OBJ_VM68K) $(OBJ_GUI) $(OBJ_TOPLEVEL)
+-	$(LINK) -o $@ $(OBJ_LOADER) $(OBJ_LINEA) $(OBJ_VM68K) $(OBJ_GUI) $(OBJ_TOPLEVEL)
++	$(LINK) $(LDFLAGS) -o $@ $(OBJ_LOADER) $(OBJ_LINEA) $(OBJ_VM68K) $(OBJ_GUI) $(OBJ_TOPLEVEL)
  
  .c.o:
 -	$(CC) $(CFLAGS) $(CFLAGS_EXTRA) $(INCFLAGS) -c -o $@ $<
