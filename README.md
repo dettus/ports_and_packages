@@ -27,4 +27,12 @@ cvs -qd anoncvs@anoncvs.ca.openbsd.org:/cvs checkout -P ports
 5. diff -u distinfo distinfo >>dMagnetic_015_to_016.patch
 
 
+Debian: Change the files in debian/. One by one.
+Run mkpackage.sh, dput.sh on a Debian 10 machine.
+Visit mentors.debian.net, once the "uploaded" email arrives.
+Find the RFS template link. Click it, send the email.
 
+
+Gentoo: Mail to chewi@gentoo.org
+
+OpenSuse: Mail to matrixfueller@gmail.com
