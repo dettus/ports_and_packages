@@ -15,3 +15,7 @@ cp games/dmagnetic/distinfo distinfo
 diff -u Makefile.orig Makefile >dmagnetic_018_to_019.patch
 diff -u distinfo.orig distinfo >>dmagnetic_018_to_019.patch
 
+
+echo please mail this patch to OpenBSD: Mail to ports@openbsd.org
+ls -l *.patch
+
