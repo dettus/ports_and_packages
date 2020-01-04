@@ -4,6 +4,7 @@ dmagnetic (0.19-1) unstable; urgency=medium
   * It is possible to play with the original MS DOS binaries
   * New graphic mode (high_ansi2) for the better looking graphics
   * New random number generator for a different playing experience
+  * Changed the standards version to 4.4.1
 
  -- Thomas Dettbarn <dettus@dettus.net>  Fri, 27 Dec 2019 21:23:45 +0100
 
