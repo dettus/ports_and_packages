@@ -1,8 +1,8 @@
 #!/bin/sh
 
-wget http://www.dettus.net/dMagnetic/dMagnetic_0.19.tar.bz2
-sha256sum dMagnetic_0.19.tar.bz2
-ls -l dMagnetic_0.19.tar.bz2
+wget http://www.dettus.net/dMagnetic/dMagnetic_0.20.tar.bz2
+sha256sum dMagnetic_0.20.tar.bz2
+ls -l dMagnetic_0.20.tar.bz2
 
 
 mkdir svnserver
@@ -11,7 +11,7 @@ svn checkout svn://svn.FreeBSD.org/ports/head/games
 rm -rf games/dMagnetic/*
 cp -r ../games/dMagnetic/* games/dMagnetic
 cd ..
-svn diff svnserver/games/dMagnetic >dMagnetic.diff
+svn diff svnserver/games/dMagnetic >dMagnetic_019_020.diff
 
 echo
 echo "-----------------------------------------------------"
