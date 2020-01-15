@@ -1,9 +1,10 @@
 # $OpenBSD$
 
-V =		0.18
+V =		0.20
 COMMENT =	interpreter for Magnetic Scrolls games
 DISTNAME =	dMagnetic_${V}
 PKGNAME =	dmagnetic-${V}
+EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	games
 
 HOMEPAGE =	https://www.dettus.net/dMagnetic/

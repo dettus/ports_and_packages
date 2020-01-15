@@ -1,8 +1,8 @@
 #!/bin/sh
 
-wget http://www.dettus.net/dMagnetic/dMagnetic_0.19.tar.bz2
-ls -l dMagnetic_0.19.tar.bz2
-sha256sum dMagnetic_0.19.tar.bz2
+wget http://www.dettus.net/dMagnetic/dMagnetic_0.20.tar.bz2
+ls -l dMagnetic_0.20.tar.bz2
+sha256sum dMagnetic_0.20.tar.bz2
 
 
 
@@ -12,8 +12,10 @@ cp ports/games/dmagnetic/distinfo distinfo.orig
 cp games/dmagnetic/Makefile Makefile
 cp games/dmagnetic/distinfo distinfo
 
-diff -u Makefile.orig Makefile >dmagnetic_018_to_019.patch
-diff -u distinfo.orig distinfo >>dmagnetic_018_to_019.patch
+diff -u Makefile.orig Makefile >dmagnetic_019_to_020.patch
+diff -u distinfo.orig distinfo >>dmagnetic_019_to_020.patch
+
+rm Makefile distinfo
 
 
 echo please mail this patch to OpenBSD: Mail to ports@openbsd.org
