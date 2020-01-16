@@ -2,7 +2,7 @@ dmagnetic (0.20-1) unstable; urgency=medium
 
   * Update to release 0.20.
   * It is possible to play with the original MS DOS binaries
-  * A glitch in the text output has been removed. 
+  * A glitch in the text output has been removed.
   * The glitch prevented solving jinxter's sliding puzzle.
   * Changed the standards version to 4.4.1
 
