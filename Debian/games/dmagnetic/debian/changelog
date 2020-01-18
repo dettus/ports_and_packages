@@ -1,3 +1,12 @@
+dmagnetic (0.21-1) unstable; urgency=medium
+
+  * Update to release 0.21.
+  * Some lintian warnings have been removed.
+  * Leftover debugging code was creating files
+  * dMagnetic is capable of reading MS DOS binaries from more games.
+
+ -- Thomas Dettbarn <dettus@dettus.net>  Sat, 18 Jan 2020 22:43:52 +0100
+
 dmagnetic (0.20-1) unstable; urgency=medium
 
   * Update to release 0.20.
