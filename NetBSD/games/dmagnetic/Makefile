@@ -11,7 +11,7 @@ HOMEPAGE=		https://www.dettus.net/dMagnetic/
 COMMENT=		Magnetic Scrolls Interpreter
 LICENSE=		2-clause-bsd
 
-INSTALLATION_DIRS=	bin ${DESTDIR}${PREFIX}/share/doc/dMagnetic
+INSTALLATION_DIRS=	bin share/doc/dMagnetic  ${PREFIX}/${PKGMANDIR}/man1  ${PREFIX}/${PKGMANDIR}/man5
 # i used games/netris as an example for this
 
 do-install:
@@ -19,7 +19,7 @@ do-install:
 	${INSTALL_DATA}         ${WRKSRC}/README.txt ${DESTDIR}${PREFIX}/share/doc/dMagnetic
 	${INSTALL_DATA}         ${WRKSRC}/dMagnetic.ini ${DESTDIR}${PREFIX}/share/doc/dMagnetic
 	${INSTALL_MAN}          ${WRKSRC}/dMagnetic.1 ${DESTDIR}${PREFIX}/${PKGMANDIR}/man1
-	${INSTALL_MAN}          ${WRKSRC}/dMagneticini.5 ${DESTDIR}${PREFIX}/${PKGMANDIR}/man
+	${INSTALL_MAN}          ${WRKSRC}/dMagneticini.5 ${DESTDIR}${PREFIX}/${PKGMANDIR}/man5
 
 
 ## The idea of this test is to check if the output is the expected one.

@@ -1,4 +1,6 @@
 @comment $NetBSD$
-@comment TODO: to fill this file with the file listing:
-@comment TODO: 1. run "/usr/bin/make package"
-@comment TODO: 2. run "/usr/bin/make print-PLIST"
+bin/dMagnetic
+man/man1/dMagnetic.1
+man/man5/dMagneticini.5
+share/doc/dMagnetic/README.txt
+share/doc/dMagnetic/dMagnetic.ini
