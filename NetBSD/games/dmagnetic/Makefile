@@ -1,4 +1,4 @@
-# $NetBSD$
+# $NetBSD: Makefile,v 1.1 2020/02/17 10:43:43 wiz Exp $
 
 DISTNAME=		dMagnetic_0.22
 PKGNAME=		${DISTNAME:S/_/-/}
@@ -11,20 +11,19 @@ HOMEPAGE=		https://www.dettus.net/dMagnetic/
 COMMENT=		Magnetic Scrolls Interpreter
 LICENSE=		2-clause-bsd
 
-INSTALLATION_DIRS=	bin share/doc/dMagnetic  ${PREFIX}/${PKGMANDIR}/man1  ${PREFIX}/${PKGMANDIR}/man5
-# i used games/netris as an example for this
+INSTALLATION_DIRS=	bin share/doc/dMagnetic ${PKGMANDIR}/man1 ${PKGMANDIR}/man5
 
 do-install:
-	${INSTALL_PROGRAM}      ${WRKSRC}/dMagnetic ${DESTDIR}${PREFIX}/bin
-	${INSTALL_DATA}         ${WRKSRC}/README.txt ${DESTDIR}${PREFIX}/share/doc/dMagnetic
-	${INSTALL_DATA}         ${WRKSRC}/dMagnetic.ini ${DESTDIR}${PREFIX}/share/doc/dMagnetic
-	${INSTALL_MAN}          ${WRKSRC}/dMagnetic.1 ${DESTDIR}${PREFIX}/${PKGMANDIR}/man1
-	${INSTALL_MAN}          ${WRKSRC}/dMagneticini.5 ${DESTDIR}${PREFIX}/${PKGMANDIR}/man5
+	${INSTALL_PROGRAM} ${WRKSRC}/dMagnetic ${DESTDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${DESTDIR}${PREFIX}/share/doc/dMagnetic
+	${INSTALL_DATA} ${WRKSRC}/dMagnetic.ini ${DESTDIR}${PREFIX}/share/doc/dMagnetic
+	${INSTALL_MAN} ${WRKSRC}/dMagnetic.1 ${DESTDIR}${PREFIX}/${PKGMANDIR}/man1
+	${INSTALL_MAN} ${WRKSRC}/dMagneticini.5 ${DESTDIR}${PREFIX}/${PKGMANDIR}/man5
 
 
 ## The idea of this test is to check if the output is the expected one.
-## for this, the md5sum is being compared. 
-## dMagnetic has several ouput modes, each one of them is tested.
+## for this, the md5sum is being compared.
+## dMagnetic has several output modes, each one of them is tested.
 do-test:
 	 cd ${WRKSRC}/testcode;  if [ true \
 		-a `${ECHO} Hello | ../dMagnetic -ini ../dMagnetic.ini \
