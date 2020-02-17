@@ -21,29 +21,33 @@ do-install:
 	${INSTALL_MAN}          ${WRKSRC}/dMagnetic.1 ${DESTDIR}${PREFIX}/${PKGMANDIR}/man1
 	${INSTALL_MAN}          ${WRKSRC}/dMagneticini.5 ${DESTDIR}${PREFIX}/${PKGMANDIR}/man
 
-##do-test:
-##	 cd ${WRKSRC}/testcode;  if [ true \
-##		-a `${ECHO} Hello | ../dMagnetic -ini ../dMagnetic.ini \
-##			-mag minitest.mag -gfx minitest.gfx \
-##			-vmode none -vcols 300 -vrows 300 \
-##		| md5 `== 0f919919290698aef854df8c75119aa8 \
-##		-a `${ECHO} Hello | ../dMagnetic -ini ../dMagnetic.ini \
-##			-mag minitest.mag -gfx minitest.gfx \
-##			-vmode monochrome -vcols 300 -vrows 300 \
-##		| md5 `== dece45b2dcc499bd4e4f4daa0d87fca5 \
-##		-a `${ECHO} Hello | ../dMagnetic -ini ../dMagnetic.ini \
-##			-mag minitest.mag -gfx minitest.gfx \
-##			-vmode low_ansi -vcols 300 -vrows 300 \
-##		| md5 `== 54fedb8291eafbc756686ad5d0e069ee \
-##		-a `${ECHO} Hello | ../dMagnetic -ini ../dMagnetic.ini \
-##			-mag minitest.mag -gfx minitest.gfx \
-##			-vmode high_ansi -vcols 300 -vrows 300 \
-##		| md5 `== 84608708bfa3ff2dc4964b255766dd81 \
-##		-a `${ECHO} Hello | ../dMagnetic -ini ../dMagnetic.ini \
-##			-mag minitest.mag -gfx minitest.gfx \
-##			-vmode sixel -vcols 300 -vrows 300 \
-##		| md5 `== d3708a8ddf81f504b86c767648dbacb0 \
-##		]; \
-##		then ${ECHO} ok; else ${ECHO} expected output not seen; exit 1; fi
+
+## The idea of this test is to check if the output is the expected one.
+## for this, the md5sum is being compared. 
+## dMagnetic has several ouput modes, each one of them is tested.
+do-test:
+	 cd ${WRKSRC}/testcode;  if [ true \
+		-a `${ECHO} Hello | ../dMagnetic -ini ../dMagnetic.ini \
+			-mag minitest.mag -gfx minitest.gfx \
+			-vmode none -vcols 300 -vrows 300 \
+		| md5 `==0f919919290698aef854df8c75119aa8 \
+		-a `${ECHO} Hello | ../dMagnetic -ini ../dMagnetic.ini \
+			-mag minitest.mag -gfx minitest.gfx \
+			-vmode monochrome -vcols 300 -vrows 300 \
+		| md5 `==dece45b2dcc499bd4e4f4daa0d87fca5 \
+		-a `${ECHO} Hello | ../dMagnetic -ini ../dMagnetic.ini \
+			-mag minitest.mag -gfx minitest.gfx \
+			-vmode low_ansi -vcols 300 -vrows 300 \
+		| md5 `==54fedb8291eafbc756686ad5d0e069ee \
+		-a `${ECHO} Hello | ../dMagnetic -ini ../dMagnetic.ini \
+			-mag minitest.mag -gfx minitest.gfx \
+			-vmode high_ansi -vcols 300 -vrows 300 \
+		| md5 `==84608708bfa3ff2dc4964b255766dd81 \
+		-a `${ECHO} Hello | ../dMagnetic -ini ../dMagnetic.ini \
+			-mag minitest.mag -gfx minitest.gfx \
+			-vmode sixel -vcols 300 -vrows 300 \
+		| md5 `==d3708a8ddf81f504b86c767648dbacb0 \
+		]; \
+		then ${ECHO} ok; else ${ECHO} expected output not seen; exit 1; fi
 
 .include "../../mk/bsd.pkg.mk"
