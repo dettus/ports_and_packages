@@ -61,32 +61,35 @@ def updatesize(lines,prefix,filename_old,filename_new):
 			lines[idx]=l
 
 
+def updateversion(lines,prefix,keyword,version_old,version_new):
+	for idx in range(0,len(lines)):
+		if (lines[idx].find(keyword)!=-1):
+			l=lines[idx].replace(version_old,version_new)
+			lines[idx]=l
+
+	
 
 def updatefilename(lines,prefix,filename_old,filename_new):
 	for idx in range(0,len(lines)):
 		l=lines[idx].replace(filename_old,filename_new)
 		lines[idx]=l
 
+def calcchecksums(filename):
+	checksums={}
 	
+	checksums['md5'     ]=mymd5(filename)
+	checksums['sha1'    ]=mysha1(filename)
+	checksums['rmd160'  ]=myrmd160(filename)
+	checksums['sha256'  ]=mysha256(filename)
+	checksums['sha256b' ]=mysha256b(filename)
+	checksums['sha512'  ]=mysha512(filename)
+
+	return checksums
+
 	
 def updatechecksums(lines,prefix,filename_old,filename_new):
-	checksums_old={}
-	checksums_new={}
-
-
-	checksums_old['md5'     ]=mymd5(prefix+filename_old)
-	checksums_old['sha1'    ]=mysha1(prefix+filename_old)
-	checksums_old['rmd160'  ]=myrmd160(prefix+filename_old)
-	checksums_old['sha256'  ]=mysha256(prefix+filename_old)
-	checksums_old['sha256b' ]=mysha256b(prefix+filename_old)
-	checksums_old['sha512'  ]=mysha512(prefix+filename_old)
-
-	checksums_new['md5'     ]=mymd5(prefix+filename_new)
-	checksums_new['sha1'    ]=mysha1(prefix+filename_new)
-	checksums_new['rmd160'  ]=myrmd160(prefix+filename_new)
-	checksums_new['sha256'  ]=mysha256(prefix+filename_new)
-	checksums_new['sha256b' ]=mysha256b(prefix+filename_new)
-	checksums_new['sha512'  ]=mysha512(prefix+filename_new)
+	checksums_old=calcchecksums(prefix+filename_old)
+	checksums_new=calcchecksums(prefix+filename_new)
 
 	for idx in range(0,len(lines)):
 		l=lines[idx]
@@ -94,6 +97,27 @@ def updatechecksums(lines,prefix,filename_old,filename_new):
 			l2=l.replace(checksums_old[k],checksums_new[k])
 			l=l2
 		lines[idx]=l
+
+
+
+def updatedotest(lines,prefix):
+	minitest_old={}
+	minitest_new={}	
+	for mode in ['none', 'monochrome','monochrome_inv','low_ansi','low_ansi2','high_ansi','high_ansi2','sixel']:
+		
+		filename_old=prefix+'minitest_'+OLD_RELEASE+'_'+mode+'.log'
+		filename_new=prefix+'minitest_'+NEW_RELEASE+'_'+mode+'.log'
+
+		minitest_old[mode]=calcchecksums(filename_old)
+		minitest_new[mode]=calcchecksums(filename_new)
+
+		for idx in range(0,len(lines)):
+			l=lines[idx]
+			for k in minitest_old[mode].keys():
+				l2=l.replace(minitest_old[mode][k],minitest_new[mode][k])
+				l=l2
+			lines[idx]=l
+
 
 
 def createdirectory(filename):
@@ -122,11 +146,12 @@ def update_OpenBSD():
 		lines=file.readlines()
 		file.close
 		
-		# TODO: version V =
 		# TODO: do-test
+		updatedotest(lines,prefix)
 		updatefilename(lines,prefix,filename_old,filename_new)
 		updatesize(lines,prefix,filename_old,filename_new)
 		updatechecksums(lines,prefix,filename_old,filename_new)
+		updateversion(lines,prefix,'V =',OLD_RELEASE,NEW_RELEASE)
 
 		file=open('new/'+fu,'w')
 		for l in lines:
@@ -150,11 +175,12 @@ def update_NetBSD():
 		lines=file.readlines()
 		file.close
 		
-		# TODO: version V =
 		# TODO: do-test
+		updatedotest(lines,prefix)
 		updatefilename(lines,prefix,filename_old,filename_new)
 		updatesize(lines,prefix,filename_old,filename_new)
 		updatechecksums(lines,prefix,filename_old,filename_new)
+		updateversion(lines,prefix,'DISTNAME=',OLD_RELEASE,NEW_RELEASE)
 
 		file=open('new/'+fu,'w')
 		for l in lines:
@@ -176,11 +202,12 @@ def update_FreeBSD():
 		lines=file.readlines()
 		file.close
 		
-		# TODO: version V =
 		# TODO: do-test
+		updatedotest(lines,prefix)
 		updatefilename(lines,prefix,filename_old,filename_new)
 		updatesize(lines,prefix,filename_old,filename_new)
 		updatechecksums(lines,prefix,filename_old,filename_new)
+		updateversion(lines,prefix,'PORTVERSION=',OLD_RELEASE,NEW_RELEASE)
 
 		file=open('new/'+fu,'w')
 		for l in lines:
