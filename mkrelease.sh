@@ -44,3 +44,10 @@ export NEW_RELEASE=0.23
 pwd
 
 python3 patchports.py
+
+cp -r new/OpenBSD/ports/* OpenBSD/
+cp -r new/FreeBSD/ports/* FreeBSD/
+cp -r new/NetBSD/pkgsrc/* NetBSD/
+
+cp -r new/Debian/* Debian/games/dmagnetic/
+
