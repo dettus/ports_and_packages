@@ -215,8 +215,117 @@ def update_FreeBSD():
 		file.close()
 		
 				
+	
+def gettimestamp():
 		
+	daynames=['Mon','Tue','Wed','Thu','Fri','Sat','Sun']
+	monthnames=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+	now=datetime.now()
+	d=now.day
+	m=monthnames[now.month]
+	y=now.year
+	mydate=f'{d:02d} {m} {y:04d}'
+
+	h=now.hour
+	m=now.minute
+	s=now.second
+	mytime=f'{h:02d}:{m:02d}:{s:02d}'
+
+	ts=daynames[now.weekday()]
+	ts+=', '
+	ts+=mydate
+	ts+=' '
+	ts+=mytime
+	ts+=' +0100'
+
+	return ts
+
+
+def update_debian(prefix):
+	# first: the changelog
+	
+	filename='debian/changelog'
+	createdirectory('new/Debian/'+filename)
+	fileo=open('new/Debian/'+filename,'w')
+	line='dmagnetic ('+str(NEW_RELEASE)+'-1) unstable; urgency=medium'
+	fileo.write(line+'\n')
+	line=''
+	fileo.write(line+'\n')
+	line='  * Update to release '+str(NEW_RELEASE)+'.'
+	fileo.write(line+'\n')
+	
+	filei=open('changelog.new','r')
+	lines=filei.readlines()
+	filei.close()
+	
+	for line in lines:
+		fileo.write(line+'\n')
+
+	line=' -- Thomas Dettbarn <dettus@dettus.net>  '+gettimestamp()
+	fileo.write(line+'\n')
+	fileo.write('\n')
+
+	filei=open(prefix+'debian/changelog','r')
+	lines=filei.readlines()
+	filei.close()
+	
+	for line in lines:
+		fileo.write(line)
+
+	fileo.close()
+	
+
+
+	####
+	for files in ['debian/files', 'dput.sh']:
+		filei=open(prefix+files)
+		lines=filei.readlines()
+		filei.close()
+
+		for idx in range(0,len(lines)):
+			l=lines[idx].replace('dmagnetic_'+str(OLD_RELEASE),'dmagnetic_'+str(NEW_RELEASE))
+			lines[idx]=l
 		
+		fileo=open('new/Debian/'+files,'w')
+		for line in lines:
+			fileo.write(line)
+		fileo.close()
+			
+	####
+	filei=open(prefix+'debian/upstream/metadata','r')
+	lines=filei.readlines()
+	filei.close()
+
+	for idx in range(0,len(lines)):
+		l=lines[idx].replace('Volume: '+str(OLD_RELEASE),'Volume: '+str(NEW_RELEASE))
+		lines[idx]=l
+
+	createdirectory('new/Debian/'+'debian/upstream/metadata')	
+	
+	fileo=open('new/Debian/'+'debian/upstream/metadata','w')
+	for line in lines:
+		fileo.write(line)
+	fileo.close()
+
+
+	#### 		
+	filei=open(prefix+'mkpackage.sh')
+	lines=filei.readlines()
+	filei.close()
+
+	for idx in range(0,len(lines)):
+		l=lines[idx].replace('VERSION='+str(OLD_RELEASE*100),'VERSION='+str(NEW_RELEASE*100))
+		lines[idx]=l
+
+	fileo=open('new/Debian/'+'mkpackage.sh','w')
+	for line in lines:
+		fileo.write(line)
+	fileo.close()
+		
+	
+
+
+			
 
 print('updating the ports from '+OLD_RELEASE+' to '+NEW_RELEASE)
 prefix="tmp/dettus.net/"
@@ -227,4 +336,5 @@ filename_new="dMagnetic_"+NEW_RELEASE+".tar.bz2"
 update_OpenBSD()
 update_NetBSD()
 update_FreeBSD()
+update_debian('Debian/games/dmagnetic/')
 
