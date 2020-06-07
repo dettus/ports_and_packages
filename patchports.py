@@ -94,6 +94,101 @@ def updatechecksums(lines,prefix,filename_old,filename_new):
 			l2=l.replace(checksums_old[k],checksums_new[k])
 			l=l2
 		lines[idx]=l
+
+
+def createdirectory(filename):
+	name=''
+	s=filename.split('/')
+	for d in range(0,len(s)-1):
+		name=name+s[d]+'/'
+
+	try:
+		os.makedirs(name)
+	except:
+		print('directory exists')
+
+
+def update_OpenBSD():
+	prefix='tmp/dettus.net/'
+	filename_old="dMagnetic_"+OLD_RELEASE+".tar.bz2"
+	filename_new="dMagnetic_"+NEW_RELEASE+".tar.bz2"
+	filestoupdate=[]
+	filestoupdate.append('OpenBSD/ports/games/dmagnetic/Makefile')
+	filestoupdate.append('OpenBSD/ports/games/dmagnetic/distinfo')
+	
+	for fu in filestoupdate:
+		createdirectory('new/'+fu)
+		file=open('tmp/'+fu,'r')
+		lines=file.readlines()
+		file.close
+		
+		# TODO: version V =
+		# TODO: do-test
+		updatefilename(lines,prefix,filename_old,filename_new)
+		updatesize(lines,prefix,filename_old,filename_new)
+		updatechecksums(lines,prefix,filename_old,filename_new)
+
+		file=open('new/'+fu,'w')
+		for l in lines:
+			file.write(l)
+		file.close()
+		
+				
+		
+	
+def update_NetBSD():
+	prefix='tmp/dettus.net/'
+	filename_old="dMagnetic_"+OLD_RELEASE+".tar.bz2"
+	filename_new="dMagnetic_"+NEW_RELEASE+".tar.bz2"
+	filestoupdate=[]
+	filestoupdate.append('NetBSD/pkgsrc/games/dMagnetic/Makefile')
+	filestoupdate.append('NetBSD/pkgsrc/games/dMagnetic/distinfo')
+	
+	for fu in filestoupdate:
+		createdirectory('new/'+fu)
+		file=open('tmp/'+fu,'r')
+		lines=file.readlines()
+		file.close
+		
+		# TODO: version V =
+		# TODO: do-test
+		updatefilename(lines,prefix,filename_old,filename_new)
+		updatesize(lines,prefix,filename_old,filename_new)
+		updatechecksums(lines,prefix,filename_old,filename_new)
+
+		file=open('new/'+fu,'w')
+		for l in lines:
+			file.write(l)
+		file.close()
+
+		
+def update_FreeBSD():
+	prefix='tmp/dettus.net/'
+	filename_old="dMagnetic_"+OLD_RELEASE+".tar.bz2"
+	filename_new="dMagnetic_"+NEW_RELEASE+".tar.bz2"
+	filestoupdate=[]
+	filestoupdate.append('FreeBSD/ports/games/dMagnetic/Makefile')
+	filestoupdate.append('FreeBSD/ports/games/dMagnetic/distinfo')
+	
+	for fu in filestoupdate:
+		createdirectory('new/'+fu)
+		file=open('tmp/'+fu,'r')
+		lines=file.readlines()
+		file.close
+		
+		# TODO: version V =
+		# TODO: do-test
+		updatefilename(lines,prefix,filename_old,filename_new)
+		updatesize(lines,prefix,filename_old,filename_new)
+		updatechecksums(lines,prefix,filename_old,filename_new)
+
+		file=open('new/'+fu,'w')
+		for l in lines:
+			file.write(l)
+		file.close()
+		
+				
+		
 		
 
 print('updating the ports from '+OLD_RELEASE+' to '+NEW_RELEASE)
@@ -102,22 +197,7 @@ filename_old="dMagnetic_"+OLD_RELEASE+".tar.bz2"
 filename_new="dMagnetic_"+NEW_RELEASE+".tar.bz2"
 
 
-file=open('tmp/OpenBSD/ports/games/dmagnetic/distinfo')
-lines=file.readlines()
-file.close()
+update_OpenBSD()
+update_NetBSD()
+update_FreeBSD()
 
-print('----- old ----')
-for line in lines:
-	print(line,end='')
-
-updatefilename(lines,prefix,filename_old,filename_new)
-updatesize(lines,prefix,filename_old,filename_new)
-updatechecksums(lines,prefix,filename_old,filename_new)
-print('----- new ----')
-for line in lines:
-	print(line,end='')
-'''
-try:
-	os.makedirs('new/openBSD/ports/games/')
-except:
-'''
