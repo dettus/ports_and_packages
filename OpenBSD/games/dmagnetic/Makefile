@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2020/01/17 22:19:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/02/13 22:08:10 sthen Exp $
 
-V =		0.22
+V =		0.23
 COMMENT =	interpreter for Magnetic Scrolls games
 DISTNAME =	dMagnetic_${V}
 PKGNAME =	dmagnetic-${V}
@@ -32,23 +32,23 @@ do-test:
 	cd ${WRKSRC}/testcode;  if [ `echo Hello | ../dMagnetic -ini ../dMagnetic.ini \
 		-mag minitest.mag -gfx minitest.gfx \
 		-vmode none -vecho -vcols 300 -vrows 300 | \
-		sha256 -b` == DOx7jAlyo+E1/MsBxGDzsEd6xGj5p6yZWZ3TuEsptuI= -a \
+		sha256 -b` == cK9FNnpq0bYSzqvTb+8wnUJYq6wnUoGlVBNCzPCnZc0= -a \
 		`echo Hello | ../dMagnetic -ini ../dMagnetic.ini \
 		-mag minitest.mag -gfx minitest.gfx \
 		-vmode monochrome -vecho -vcols 300 -vrows 300 | \
-		sha256 -b` == JH9v0Uh6jMvWt2XES85vcqqZiUwmktpiLENUZvM/8AY= -a \
+		sha256 -b` == seDxuft63ieWCyOgu/GV1rV3E7yROXeS+rC9cA6IL7Y= -a \
 		`echo Hello | ../dMagnetic -ini ../dMagnetic.ini \
 		-mag minitest.mag -gfx minitest.gfx \
 		-vmode low_ansi -vecho -vcols 300 -vrows 300 | \
-		sha256 -b` == 6DhbUg1shZBuSXIm3PNK1/fMfRQ5RIHCuLPik+IkeQM= -a \
+		sha256 -b` == AwX+FxRDEMR1mi/CP3jn85dWA9UltkoezHn7hmKFI8k= -a \
 		`echo Hello | ../dMagnetic -ini ../dMagnetic.ini \
 		-mag minitest.mag -gfx minitest.gfx \
 		-vmode high_ansi -vecho -vcols 300 -vrows 300 | \
-		sha256 -b` == ShiqpQ8Ey8CSV2g3gMCCzSS89Ak6ZaNUQjaw11Tcj8k= -a \
+		sha256 -b` == kaRDtG5AyqOo8ikUStr+giD0RfRSyuZjLg99zZXgO58= -a \
 		`echo Hello | ../dMagnetic -ini ../dMagnetic.ini \
 		-mag minitest.mag -gfx minitest.gfx \
 		-vmode sixel -vecho -vcols 300 -vrows 300 | \
-		sha256 -b` == RLueDmrARhpkn8A9YOJz1OW2YLRDBlKCjlxY3Ef56ro= \
+		sha256 -b` == ad6zWhMj07AY0kn7DrkbM4cuRU2YbHU4kSq6PJHVWjI= \
 		]; \
 		then echo ok; else echo expected output not seen; exit 1; fi
 

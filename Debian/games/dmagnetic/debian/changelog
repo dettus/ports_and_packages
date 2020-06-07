@@ -1,3 +1,10 @@
+dmagnetic (0.23-1) unstable; urgency=medium
+
+  * Update to release 0.23.
+  * Introduced new graphic render modes for MS-DOS binaries
+
+ -- Thomas Dettbarn <dettus@dettus.net>  Sun, 07 Jul 2020 23:03:53 +0100
+
 dmagnetic (0.22-1) unstable; urgency=medium
 
   * Update to release 0.22.
