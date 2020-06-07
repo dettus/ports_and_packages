@@ -4,8 +4,8 @@ export OLD_RELEASE=0.22
 export NEW_RELEASE=0.23
 
 (
-	mkdir -p tmp/
-	cd tmp/
+	mkdir -p tmp/dettus.net/
+	cd tmp/dettus.net/
 	wget -c http://www.dettus.net/dMagnetic/dMagnetic_$NEW_RELEASE.tar.bz2
 	
 	for I in $OLD_RELEASE $NEW_RELEASE
@@ -26,4 +26,21 @@ export NEW_RELEASE=0.23
 		)
 	done
 )
+(
+	mkdir -p tmp/FreeBSD/ports/games/
+	cd tmp/FreeBSD/ports/games/
+	svn co svn://svn.FreeBSD.org/ports/head/games/dMagnetic
+)
+(
+	mkdir -p tmp/OpenBSD
+	cd tmp/OpenBSD/
+	echo "yes" | cvs -qd anoncvs@anoncvs.ca.openbsd.org:/cvs checkout -P ports/games/dmagnetic
+)
+(
+	mkdir -p tmp/NetBSD
+	cd tmp/NetBSD
+	echo "yes" | cvs -q -z2 -d anoncvs@anoncvs.NetBSD.org:/cvsroot checkout -P pkgsrc/games/dMagnetic
+)
+pwd
+
 python3 patchports.py

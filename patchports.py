@@ -50,16 +50,74 @@ def myrmd160(fname):
 		for chunk in iter(lambda: f.read(4096), b""):
 			hash_rmd160.update(chunk)
 	return hash_rmd160.hexdigest()
+
+
+def updatesize(lines,prefix,filename_old,filename_new):
+	filesize_old=str(os.path.getsize(prefix+filename_old))
+	filesize_new=str(os.path.getsize(prefix+filename_new))
+	for idx in range(0,len(lines)):
+		if (lines[idx].find('SIZE')!=-1):
+			l=lines[idx].replace(filesize_old,filesize_new)
+			lines[idx]=l
+
+
+
+def updatefilename(lines,prefix,filename_old,filename_new):
+	for idx in range(0,len(lines)):
+		l=lines[idx].replace(filename_old,filename_new)
+		lines[idx]=l
+
 	
+	
+def updatechecksums(lines,prefix,filename_old,filename_new):
+	checksums_old={}
+	checksums_new={}
+
+
+	checksums_old['md5'     ]=mymd5(prefix+filename_old)
+	checksums_old['sha1'    ]=mysha1(prefix+filename_old)
+	checksums_old['rmd160'  ]=myrmd160(prefix+filename_old)
+	checksums_old['sha256'  ]=mysha256(prefix+filename_old)
+	checksums_old['sha256b' ]=mysha256b(prefix+filename_old)
+	checksums_old['sha512'  ]=mysha512(prefix+filename_old)
+
+	checksums_new['md5'     ]=mymd5(prefix+filename_new)
+	checksums_new['sha1'    ]=mysha1(prefix+filename_new)
+	checksums_new['rmd160'  ]=myrmd160(prefix+filename_new)
+	checksums_new['sha256'  ]=mysha256(prefix+filename_new)
+	checksums_new['sha256b' ]=mysha256b(prefix+filename_new)
+	checksums_new['sha512'  ]=mysha512(prefix+filename_new)
+
+	for idx in range(0,len(lines)):
+		l=lines[idx]
+		for k in checksums_old.keys():
+			l2=l.replace(checksums_old[k],checksums_new[k])
+			l=l2
+		lines[idx]=l
+		
 
 print('updating the ports from '+OLD_RELEASE+' to '+NEW_RELEASE)
-filename_old="tmp/dMagnetic_"+OLD_RELEASE+".tar.bz2"
-filename_new="tmp/dMagnetic_"+NEW_RELEASE+".tar.bz2"
+prefix="tmp/dettus.net/"
+filename_old="dMagnetic_"+OLD_RELEASE+".tar.bz2"
+filename_new="dMagnetic_"+NEW_RELEASE+".tar.bz2"
 
-print('md5:    '+mymd5(filename_old))
-print('sha1:   '+mysha1(filename_old))
-print('sha256: '+mysha256(filename_old))
-print('sha256b:'+mysha256b(filename_old))
-print('sha512: '+mysha512(filename_old))
-print('rmd160: '+myrmd160(filename_old))
 
+file=open('tmp/OpenBSD/ports/games/dmagnetic/distinfo')
+lines=file.readlines()
+file.close()
+
+print('----- old ----')
+for line in lines:
+	print(line,end='')
+
+updatefilename(lines,prefix,filename_old,filename_new)
+updatesize(lines,prefix,filename_old,filename_new)
+updatechecksums(lines,prefix,filename_old,filename_new)
+print('----- new ----')
+for line in lines:
+	print(line,end='')
+'''
+try:
+	os.makedirs('new/openBSD/ports/games/')
+except:
+'''
