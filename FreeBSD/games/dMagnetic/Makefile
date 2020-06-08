@@ -43,7 +43,7 @@ do-test:
 		`${ECHO_CMD} Hello | ../dMagnetic -ini ../dMagnetic.ini \
 		-mag minitest.mag -gfx minitest.gfx \
 		-vmode low_ansi2 -vecho -vcols 300 -vrows 300 | \
-		sha256 ` == f4a1edd1313246dff47a9d44e2827b475c483efce456d1c3475b9b19f8fd8b7 -a \
+		sha256 ` == ef4a1edd1313246dff47a9d44e2827b475c483efce456d1c3475b9b19f8fd8b7 -a \
 		`${ECHO_CMD} Hello | ../dMagnetic -ini ../dMagnetic.ini \
 		-mag minitest.mag -gfx minitest.gfx \
 		-vmode high_ansi -vecho -vcols 300 -vrows 300 | \

@@ -39,8 +39,16 @@ do-test:
 		sha256 -b` == seDxuft63ieWCyOgu/GV1rV3E7yROXeS+rC9cA6IL7Y= -a \
 		`echo Hello | ../dMagnetic -ini ../dMagnetic.ini \
 		-mag minitest.mag -gfx minitest.gfx \
+		-vmode monochrome_inv -vecho -vcols 300 -vrows 300 | \
+		sha256 -b` == MfppImDWbkyITNN49NVWlI+iysmToiJzW1D+d9XkL3Q= -a \
+		`echo Hello | ../dMagnetic -ini ../dMagnetic.ini \
+		-mag minitest.mag -gfx minitest.gfx \
 		-vmode low_ansi -vecho -vcols 300 -vrows 300 | \
 		sha256 -b` == AwX+FxRDEMR1mi/CP3jn85dWA9UltkoezHn7hmKFI8k= -a \
+		`echo Hello | ../dMagnetic -ini ../dMagnetic.ini \
+		-mag minitest.mag -gfx minitest.gfx \
+		-vmode low_ansi2 -vecho -vcols 300 -vrows 300 | \
+		sha256 -b` == 70oe3RMTJG3/R6nUTigntHXEg+/ORW0cNHW5sZ+P2Lc= -a \
 		`echo Hello | ../dMagnetic -ini ../dMagnetic.ini \
 		-mag minitest.mag -gfx minitest.gfx \
 		-vmode high_ansi -vecho -vcols 300 -vrows 300 | \
