@@ -1,7 +1,7 @@
 This one converts the BSD-style Makefile into a DEBIAN-style Makefile.
 Enjoy!
---- a/Makefile	2019-12-27 21:30:06.949894953 +0100
-+++ b/Makefile	2019-12-27 21:32:23.570659082 +0100
+--- a/Makefile	Mon Jun  8 07:47:55 2020
++++ b/Makefile	Mon Jun  8 07:47:59 2020
 @@ -22,10 +22,10 @@
  #OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
  #OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
@@ -17,16 +17,7 @@ Enjoy!
  
  CC?=gcc
  AR?=ar
-@@ -37,7 +37,7 @@
- INCFLAGS=-I$(PROJ_HOME)src/gui -I$(PROJ_HOME)src/toplevel -I$(PROJ_HOME)src/loader -I$(PROJ_HOME)src/engine/vm68k -I$(PROJ_HOME)src/engine/linea -I$(PROJ_HOME)src/engine/include 
- OBJDIR=$(PROJ_HOME)obj/
- LINK=$(CC)
--LDFLAGS="-L"$(OBJDIR)
-+LDFLAGS+="-L"$(OBJDIR)
- 
- SOURCES_LOADER=	\
- 	src/loader/maggfxloader.c
-@@ -67,7 +67,6 @@
+@@ -68,7 +68,6 @@
  OBJ_TOPLEVEL=${SOURCES_TOPLEVEL:.c=.o}
  
  all:	dMagnetic
@@ -34,7 +25,7 @@ Enjoy!
  
  clean:
  	rm -rf dMagnetic
-@@ -86,14 +85,14 @@
+@@ -87,14 +86,14 @@
  	cp dMagnetic $(INSTALLBIN)
  	cp dMagnetic.1 $(INSTALLMAN)/man1
  	cp dMagneticini.5 $(INSTALLMAN)/man5

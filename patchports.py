@@ -1,6 +1,7 @@
 #/usr/bin/env python3
 
 import os
+ANCIENT_RELEASE=os.environ['ANCIENT_RELEASE']
 OLD_RELEASE=os.environ['OLD_RELEASE']
 NEW_RELEASE=os.environ['NEW_RELEASE']
 

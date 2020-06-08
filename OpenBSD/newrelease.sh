@@ -5,8 +5,11 @@ ls -l dMagnetic_0.23.tar.bz2
 sha256sum dMagnetic_0.23.tar.bz2
 
 
-
-cvs -qd anoncvs@anoncvs.ca.openbsd.org:/cvs checkout -P ports
+(
+	mkdir -p ports/games/
+	cd ports/games/
+	cvs -qd anoncvs@anoncvs.ca.openbsd.org:/cvs checkout -P ports/games/dmagnetic
+)
 cp ports/games/dmagnetic/Makefile Makefile.orig
 cp ports/games/dmagnetic/distinfo distinfo.orig
 cp games/dmagnetic/Makefile Makefile
