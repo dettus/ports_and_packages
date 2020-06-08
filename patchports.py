@@ -223,7 +223,7 @@ def gettimestamp():
 	monthnames=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 	now=datetime.now()
 	d=now.day
-	m=monthnames[now.month]
+	m=monthnames[now.month-1]
 	y=now.year
 	mydate=f'{d:02d} {m} {y:04d}'
 
