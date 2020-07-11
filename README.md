@@ -40,6 +40,10 @@ Visit mentors.debian.net, once the "uploaded" email arrives.
 Find the RFS template link. Click it, send the email.
 
 
+OpenBSD: sthen@openbsd.org
+NetBSD: wiz@netbsd.org
 Gentoo: Mail to chewi@gentoo.org
 
 OpenSuse: Mail to matrixfueller@gmail.com
+
+Homebrew: Dan via IF Community
