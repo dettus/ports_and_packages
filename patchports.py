@@ -101,24 +101,6 @@ def updatechecksums(lines,prefix,filename_old,filename_new):
 
 
 
-def updatedotest(lines,prefix):
-	minitest_old={}
-	minitest_new={}	
-	for mode in ['none', 'monochrome','monochrome_inv','low_ansi','low_ansi2','high_ansi','high_ansi2','sixel']:
-		
-		filename_old=prefix+'minitest_'+OLD_RELEASE+'_'+mode+'.log'
-		filename_new=prefix+'minitest_'+NEW_RELEASE+'_'+mode+'.log'
-
-		minitest_old[mode]=calcchecksums(filename_old)
-		minitest_new[mode]=calcchecksums(filename_new)
-
-		for idx in range(0,len(lines)):
-			l=lines[idx]
-			for k in minitest_old[mode].keys():
-				l2=l.replace(minitest_old[mode][k],minitest_new[mode][k])
-				l=l2
-			lines[idx]=l
-
 
 
 def createdirectory(filename):
@@ -148,7 +130,6 @@ def update_OpenBSD():
 		file.close
 		
 		# TODO: do-test
-		updatedotest(lines,prefix)
 		updatefilename(lines,prefix,filename_old,filename_new)
 		updatesize(lines,prefix,filename_old,filename_new)
 		updatechecksums(lines,prefix,filename_old,filename_new)
@@ -177,7 +158,6 @@ def update_NetBSD():
 		file.close
 		
 		# TODO: do-test
-		updatedotest(lines,prefix)
 		updatefilename(lines,prefix,filename_old,filename_new)
 		updatesize(lines,prefix,filename_old,filename_new)
 		updatechecksums(lines,prefix,filename_old,filename_new)
@@ -204,7 +184,6 @@ def update_FreeBSD():
 		file.close
 		
 		# TODO: do-test
-		updatedotest(lines,prefix)
 		updatefilename(lines,prefix,filename_old,filename_new)
 		updatesize(lines,prefix,filename_old,filename_new)
 		updatechecksums(lines,prefix,filename_old,filename_new)
