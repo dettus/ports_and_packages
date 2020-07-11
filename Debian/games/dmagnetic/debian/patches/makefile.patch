@@ -1,7 +1,7 @@
 This one converts the BSD-style Makefile into a DEBIAN-style Makefile.
 Enjoy!
---- a/Makefile	Mon Jun  8 07:47:55 2020
-+++ b/Makefile	Mon Jun  8 07:47:59 2020
+--- a/Makefile	2020-07-11 21:28:19.638180848 +0200
++++ b/Makefile	2020-07-11 21:31:00.239525160 +0200
 @@ -22,10 +22,10 @@
  #OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
  #OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
@@ -17,7 +17,7 @@ Enjoy!
  
  CC?=gcc
  AR?=ar
-@@ -68,7 +68,6 @@
+@@ -74,7 +74,6 @@
  OBJ_TOPLEVEL=${SOURCES_TOPLEVEL:.c=.o}
  
  all:	dMagnetic
@@ -25,7 +25,7 @@ Enjoy!
  
  clean:
  	rm -rf dMagnetic
-@@ -87,14 +86,14 @@
+@@ -93,8 +92,8 @@
  	cp dMagnetic $(INSTALLBIN)
  	cp dMagnetic.1 $(INSTALLMAN)/man1
  	cp dMagneticini.5 $(INSTALLMAN)/man5
@@ -36,11 +36,12 @@ Enjoy!
  	cp dMagnetic.ini $(INSTALLSHARE)/dMagnetic
  
  
- dMagnetic:	$(OBJ_LOADER) $(OBJ_LINEA) $(OBJ_VM68K) $(OBJ_GUI) $(OBJ_TOPLEVEL)
--	$(LINK) -o $@ $(OBJ_LOADER) $(OBJ_LINEA) $(OBJ_VM68K) $(OBJ_GUI) $(OBJ_TOPLEVEL)
-+	$(LINK) $(LDFLAGS) -o $@ $(OBJ_LOADER) $(OBJ_LINEA) $(OBJ_VM68K) $(OBJ_GUI) $(OBJ_TOPLEVEL)
+@@ -102,7 +101,7 @@
+ 	$(LINK) $(LDFLAGS) -o $@ $(OBJ_LOADER) $(OBJ_LINEA) $(OBJ_VM68K) $(OBJ_GUI) $(OBJ_TOPLEVEL)
  
  .c.o:
 -	$(CC) $(CFLAGS) $(CFLAGS_EXTRA) $(INCFLAGS) -c -o $@ $<
 +	$(CC) $(CPPFLAGS) $(CFLAGS) $(CFLAGS_EXTRA) $(INCFLAGS) -c -o $@ $<
  
+ do-test:	dMagnetic
+ 	if [ true \
