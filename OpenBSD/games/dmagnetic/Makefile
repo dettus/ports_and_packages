@@ -29,6 +29,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${PREFIX}/share/dMagnetic
 
 do-test:
-	cd ${WRKSRC} && ${MAKE} SHA256_CMD=sha256 do-test
+	cd ${WRKSRC} && ${MAKE} SHA256_CMD=sha256 check
 
 .include <bsd.port.mk>

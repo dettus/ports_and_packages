@@ -1,6 +1,6 @@
 #!/bin/sh
-export OLD_RELEASE=0.23
-export NEW_RELEASE=0.24
+export OLD_RELEASE=0.24
+export NEW_RELEASE=0.25
 
 (
 	mkdir -p ports/games/

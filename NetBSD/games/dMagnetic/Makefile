@@ -25,6 +25,6 @@ do-install:
 ## for this, the md5sum is being compared.
 ## dMagnetic has several output modes, each one of them is tested.
 do-test:
-	cd ${WRKSRC} && ${MAKE} SHA256_CMD=sha256 do-test
+	cd ${WRKSRC} && ${MAKE} SHA256_CMD=sha256 check
 
 .include "../../mk/bsd.pkg.mk"
