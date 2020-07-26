@@ -7,15 +7,6 @@ dmagnetic (0.25-1) unstable; urgency=medium
 
  -- Thomas Dettbarn <dettus@dettus.net>  Sun, 26 Jul 2020 14:26:01 +0100
 
-dmagnetic (0.25-1) unstable; urgency=medium
-
-  * Update to release 0.25.
-  * Post compilation check improved
-
-  * Internal RGB channels upgraded from 3 to 10 bit.
-
- -- Thomas Dettbarn <dettus@dettus.net>  Sun, 26 Jul 2020 14:22:47 +0100
-
 dmagnetic (0.24-1) unstable; urgency=medium
 
   * Update to release 0.24.
