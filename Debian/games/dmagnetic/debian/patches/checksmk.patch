@@ -1,0 +1,13 @@
+BSD has sha256. Debian has sha256sum. Same program. Different 
+name for the binaries.
+--- a/checks.mk	2020-07-26 14:43:58.654066037 +0200
++++ b/checks.mk	2020-07-26 14:44:14.545467190 +0200
+@@ -25,7 +25,7 @@
+ ### the following lines are the post-compilation test. This is a formality on some operating systems ###########################
+ 
+ ECHO_CMD?=echo
+-SHA256_CMD?=sha256
++SHA256_CMD?=sha256sum
+ AWK_CMD?=awk
+ 
+ ## the checks work by checking the sha256 sum of the output. 
