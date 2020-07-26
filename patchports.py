@@ -57,7 +57,7 @@ def updatesize(lines,prefix,filename_old,filename_new):
 	filesize_old=str(os.path.getsize(prefix+filename_old))
 	filesize_new=str(os.path.getsize(prefix+filename_new))
 	for idx in range(0,len(lines)):
-		if (lines[idx].find('SIZE')!=-1):
+		if (lines[idx].find('SIZE')!=-1 or lines[idx].find('Size')!=-1):
 			l=lines[idx].replace(filesize_old,filesize_new)
 			lines[idx]=l
 

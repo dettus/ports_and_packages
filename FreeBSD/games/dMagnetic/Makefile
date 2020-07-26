@@ -1,7 +1,7 @@
-# $FreeBSD: head/games/dMagnetic/Makefile 538279 2020-06-09 05:38:36Z fernape $
+# $FreeBSD: head/games/dMagnetic/Makefile 542409 2020-07-17 06:32:31Z kai $
 
 PORTNAME=	dMagnetic
-PORTVERSION=	0.24
+PORTVERSION=	0.25
 CATEGORIES=	games
 MASTER_SITES=	https://www.dettus.net/dMagnetic/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -14,16 +14,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		tar:bz2
 
+TEST_TARGET=	do-test
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/dMagnetic.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/dMagneticini.5 ${STAGEDIR}${MANPREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/dMagnetic.1 ${STAGEDIR}${MANPREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/dMagneticini.5 ${STAGEDIR}${MANPREFIX}/share/man/man5
 	${MKDIR} ${STAGEDIR}/${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/dMagnetic.ini ${STAGEDIR}/${DATADIR}
 	${MKDIR} ${STAGEDIR}/${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${STAGEDIR}/${DOCSDIR}
-
-do-test:
-	cd ${WRKSRC} && ${MAKE} SHA256_CMD=sha256 do-test
 
 .include <bsd.port.mk>
