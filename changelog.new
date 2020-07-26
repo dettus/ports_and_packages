@@ -1,1 +1,2 @@
-  * Commodore 64 binaries can be used for playing.
+  * Post compilation check improved
+  * Internal RGB channels upgraded from 3 to 10 bit.
