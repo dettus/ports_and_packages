@@ -3,17 +3,14 @@
 export DH_VERBOSE = 1
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
+ifneq (,$(filter $(DEB_HOST_ARCH), i386))
+   export DEB_CFLAGS_MAINT_APPEND += -ffloat-store
+endif
 export SHA256_CMD=sha256sum
-#export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
-#export DEB_RULES_REQUIRES_ROOT = ""
 
 %:
 	dh $@
 
-#override_dh_auto_install:
-#	dh_auto_install -- prefix=/usr
 
-#override_dh_install:
-#	dh_install --list-missing -X.pyc -X.pyo
 override_dh_auto_install:
 	@echo skip install target
