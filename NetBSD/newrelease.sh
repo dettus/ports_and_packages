@@ -9,7 +9,7 @@ mkdir b
 cp -r tmp/pkgsrc/games a
 cp -r games b
 
-diff -u a/games/dMagnetic b/games/dMagnetic >pkgsrc_games_dMagnetic_0.24_to_0.25.patch
+diff -u a/games/dMagnetic b/games/dMagnetic >pkgsrc_games_dMagnetic_0.25_to_0.26.patch
 
 ls -l *.patch
 

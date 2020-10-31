@@ -1,7 +1,7 @@
-# $FreeBSD: head/games/dMagnetic/Makefile 542409 2020-07-17 06:32:31Z kai $
+# $FreeBSD: head/games/dMagnetic/Makefile 543541 2020-07-27 17:41:33Z tcberner $
 
 PORTNAME=	dMagnetic
-PORTVERSION=	0.25
+PORTVERSION=	0.26
 CATEGORIES=	games
 MASTER_SITES=	https://www.dettus.net/dMagnetic/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
