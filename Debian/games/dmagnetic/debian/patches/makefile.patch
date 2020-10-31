@@ -1,7 +1,5 @@
-This patch transforms the BSD-style Makefile into a 
-something appropriate for a Debian Linux.
---- a/Makefile	2020-07-26 14:37:17.440815279 +0200
-+++ b/Makefile	2020-07-26 14:39:24.799507841 +0200
+--- a/Makefile	2020-10-31 20:03:15.154089319 +0100
++++ b/Makefile	2020-10-31 20:06:19.874326541 +0100
 @@ -23,10 +23,10 @@
  #OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
  #OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
@@ -17,15 +15,7 @@ something appropriate for a Debian Linux.
  
  CC?=gcc
  AR?=ar
-@@ -72,7 +72,6 @@
- OBJ_TOPLEVEL=${SOURCES_TOPLEVEL:.c=.o}
- 
- all:	dMagnetic
--	strip dMagnetic
- 
- clean:
- 	rm -rf dMagnetic
-@@ -91,8 +90,8 @@
+@@ -92,8 +92,8 @@
  	cp dMagnetic $(INSTALLBIN)
  	cp dMagnetic.1 $(INSTALLMAN)/man1
  	cp dMagneticini.5 $(INSTALLMAN)/man5
@@ -36,12 +26,3 @@ something appropriate for a Debian Linux.
  	cp dMagnetic.ini $(INSTALLSHARE)/dMagnetic
  
  
-@@ -100,7 +99,7 @@
- 	$(LINK) $(LDFLAGS) -o $@ $(OBJ_LOADER) $(OBJ_LINEA) $(OBJ_VM68K) $(OBJ_GUI) $(OBJ_TOPLEVEL)
- 
- .c.o:
--	$(CC) $(CFLAGS) $(CFLAGS_EXTRA) $(INCFLAGS) -c -o $@ $<
-+	$(CC) $(CPPFLAGS) $(CFLAGS) $(CFLAGS_EXTRA) $(INCFLAGS) -c -o $@ $<
- 
- 
- ## in case some post-compilation checks are needed
