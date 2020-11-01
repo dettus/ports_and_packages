@@ -1,2 +1,2 @@
-  * Post compilation check improved
-  * Internal RGB channels upgraded from 3 to 10 bit.
+  * Removed a bug that prevented loading game binaries
+  * Loads binaries from Amstrad CPC, Commodore64 and MS DOS

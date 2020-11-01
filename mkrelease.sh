@@ -1,8 +1,8 @@
 #!/bin/sh
 
-export ANCIENT_RELEASE=0.24
-export OLD_RELEASE=0.25
-export NEW_RELEASE=0.26
+export ANCIENT_RELEASE=0.25
+export OLD_RELEASE=0.26
+export NEW_RELEASE=0.27
 
 (
 	mkdir -p tmp/dettus.net/

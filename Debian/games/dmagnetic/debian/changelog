@@ -1,3 +1,21 @@
+dmagnetic (0.27-1) unstable; urgency=medium
+
+  * Update to release 0.27.
+  * Removed a bug that prevented loading game binaries
+
+  * Loads binaries from Amstrad CPC, Commodore64 and MS DOS
+
+ -- Thomas Dettbarn <dettus@dettus.net>  Sun, 01 Nov 2020 19:10:01 +0100
+
+dmagnetic (0.27-1) unstable; urgency=medium
+
+  * Update to release 0.27.
+  * Removed a bug that prevented loading game binaries
+
+  * Loads binaries from Amstrad CPC, Commodore64 and MS DOS
+
+ -- Thomas Dettbarn <dettus@dettus.net>  Sun, 01 Nov 2020 19:09:37 +0100
+
 dmagnetic (0.26-1) unstable; urgency=medium
 
   * Update to release 0.26.
