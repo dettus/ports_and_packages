@@ -1,7 +1,7 @@
 #!/bin/sh
 
-export OLD_RELEASE=0.25
-export NEW_RELEASE=0.26
+export OLD_RELEASE=0.26
+export NEW_RELEASE=0.27
 
 mkdir svnserver
 cd svnserver
