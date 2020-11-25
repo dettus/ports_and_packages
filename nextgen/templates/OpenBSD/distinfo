@@ -1,0 +1,2 @@
+SHA256 (dMagnetic_%%VERSIONNUM%%.tar.bz2) = %%SHA256SUMBASE64%%
+SIZE (dMagnetic_%%VERSIONNUM%%.tar.bz2) = %%FILESIZE%%
