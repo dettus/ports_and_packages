@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-
-from os import walk
+import os
 
 def processfile(dirpath,filename):
 	fullname=dirpath+'/'+filename;
@@ -21,6 +20,22 @@ def processfile(dirpath,filename):
 
 
 
-for (dirpath,dirnames,filenames) in walk("templates/"):
+
+fullfilenames=[]
+fulldirnames=[]
+for (dirpath,dirnames,filenames) in os.walk("templates/"):
 	for filename in filenames:
-		processfile(dirpath,filename)
+		fullfilenames.append(dirpath+"/"+filename)
+	for dirname in dirnames:
+		fulldirnames.append(dirpath.replace("templates","output")+"/"+dirname)
+
+
+os.mkdir("output")
+print("create the following directories:")
+for d in fulldirnames:
+	print(d)
+	os.mkdir(d)
+
+print("process the following files:")
+for f in fullfilenames:
+	print(f)
