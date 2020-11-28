@@ -262,7 +262,7 @@ macroterminals['%%SHA1SUMHEX%%']=mysha1(dirdownload+'/'+packagefilename)
 macroterminals['%%RMD160SUMHEX%%']=myrmd160(dirdownload+'/'+packagefilename)
 macroterminals['%%SHA512SUMHEX%%']=mysha512(dirdownload+'/'+packagefilename)
 macroterminals['%%OLDCHANGELOG%%']=readTxtFile("repositories/Debian/debian/changelog")
-macroterminals['%%NEWCHANGELOG%%']="dmagnetic ("+versionnum+"-1) unstable; urgency=medium\n\n"+readTxtFile("newchangelog.txt")+"\n -- Thomas Dettbarn <dettus@dettus.net> "+getnow()
+macroterminals['%%NEWCHANGELOG%%']="dmagnetic ("+versionnum+"-1) unstable; urgency=medium\n\n"+readTxtFile("newchangelog.txt")+"\n -- Thomas Dettbarn <dettus@dettus.net>  "+getnow()
 macroterminals['%%DEBIANMAKEFILEPATCH%%']='Transform the BSD-style Makefile into Debian-style\n'+patchMakefile(dirdownload,packagefilename)
 
 
