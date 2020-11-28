@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 import os
 import time
+import urllib.request
+import shutil
+import lzma
+import tarfile
+from contextlib import closing
+prevdebianpackage="dmagnetic_0.27-1"
 versionnum="0.28"
 
 
@@ -78,6 +84,13 @@ def mkoutputdirs(templatedirnames,dirtemplate,diroutput):
 ####################################################################
 ###
 ###
+
+def httpfile(dirdownload,url,filename):
+	print('downloading '+url+' and writing to '+dirdownload+'/'+filename)
+	with urllib.request.urlopen(url) as response,open(dirdownload+'/'+filename,'wb') as out_file:
+	        shutil.copyfileobj(response, out_file)
+
+
 
 
 
@@ -182,21 +195,59 @@ def getnow():
 	        now+='+0100'
 
 	return now
-	
+
+
+def downloadfiles(dirrepos,dirdownload,packagefilename):
+	print('downloading...')
+	os.makedirs(dirrepos,exist_ok=True)
+	os.makedirs(dirdownload,exist_ok=True)
+	cmdlist='cd '+dirrepos
+	cmdlist+='''
+		(
+			mkdir OpenBSD
+			cd OpenBSD
+			mkdir -p ports/games/
+			cvs -qd anoncvs@anoncvs.ca.openbsd.org:/cvs checkout -P ports/games/dmagnetic
+		)
+		(
+			mkdir -p FreeBSD
+			cd FreeBSD
+			svn checkout svn://svn.FreeBSD.org/ports/head/games/dMagnetic
+		)
+		(
+			mkdir NetBSD
+			cd NetBSD
+			cvs -q -z2 -d anoncvs@anoncvs.NetBSD.org:/cvsroot checkout -P pkgsrc/games/dMagnetic 	
+		)
+		'''
+	os.system(cmdlist)
+
+
+	url='http://deb.debian.org/debian/pool/main/d/dmagnetic/'+prevdebianpackage+'.debian.tar.xz'
+	os.makedirs(dirrepos+"/Debian",exist_ok=True)
+	filename=prevdebianpackage+'.debian.tar.xz'
+	httpfile(dirrepos+'/Debian',url,filename)
+	with lzma.open(dirrepos+'/Debian/'+filename) as f:
+		with tarfile.open(fileobj=f) as tar:
+			content = tar.extractall(dirrepos+'/Debian')
+
+	url='https://www.dettus.net/dMagnetic/'+packagefilename
+	filename=packagefilename
+	httpfile(dirdownload,url,filename)
+	print('done!')
 
 
 	
 
-print("\x1b[0;31m TODO: ASK FOR THE CORRECT VERSION NUMBER \x1b[0m");
-print("\x1b[1;31m TODO: DOWNLOAD THE REPOSITORIES \x1b[0m")
-print("\x1b[1;31m TODO: DOWNLOAD THE dMangetic file\x1b[0m")
 ###################################################
 dirtemplate="templates"
 diroutput="output"
 dirdownload="downloads"
+dirrepos="repositories"
 
 
 packagefilename="dMagnetic_"+versionnum+".tar.bz2"
+downloadfiles(dirrepos,dirdownload,packagefilename)
 
 (templatefilenames,templatedirnames)=gettemplatelist(dirtemplate)
 mkoutputdirs(templatedirnames,dirtemplate,diroutput)
@@ -222,3 +273,8 @@ print('processing files')
 for filename in templatefilenames:
 	processfile(filename,dirtemplate,diroutput,macroterminals)
 
+
+print('-----------------------')
+print(f'this was version {versionnum}')
+print('The changelog is:')
+print(macroterminals['%%NEWCHANGELOG%%'])
