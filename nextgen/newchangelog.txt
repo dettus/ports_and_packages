@@ -1,0 +1,3 @@
+  * Spectrum128 and Spectrum+3 binaries can be used
+  * Acorn Archimedes binaries can be used for playing
+  * Some internal bugfixes
