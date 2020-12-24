@@ -6,8 +6,8 @@ import shutil
 import lzma
 import tarfile
 from contextlib import closing
-prevdebianpackage="dmagnetic_0.27-1"
-versionnum="0.28"
+prevdebianpackage="dmagnetic_0.28-1"
+versionnum="0.29"
 
 
 

@@ -1,3 +1,11 @@
+dmagnetic (0.29-1) unstable; urgency=medium
+
+  * AtariXL and Atari800 ATR files are used for playing
+  * The new graphic mode UTF has been added
+  * More users can enjoy the beautiful pictures now
+
+ -- Thomas Dettbarn <dettus@dettus.net>  Thu, 24 Dec 2020 08:59:34 +0100
+
 dmagnetic (0.28-1) unstable; urgency=medium
 
   * Spectrum128 and Spectrum+3 binaries can be used
@@ -110,5 +118,7 @@ dmagnetic (0.16-1) UNRELEASED; urgency=low
   * Initial release. Closes: #929619
 
  -- Thomas Dettbarn <dettus@dettus.net>  Tue, 23 Jul 2019 12:13:30 +0200
+
+
 
 

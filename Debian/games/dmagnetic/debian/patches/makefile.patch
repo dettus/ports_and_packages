@@ -1,6 +1,6 @@
 Transform the BSD-style Makefile into Debian-style
---- a/Makefile	2020-11-28 12:48:58.558168578 +0100
-+++ b/Makefile	2020-11-28 12:48:58.558168578 +0100
+--- a/Makefile	Thu Dec 24 08:59:35 2020
++++ b/Makefile	Thu Dec 24 08:59:35 2020
 @@ -23,10 +23,10 @@
  #OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
  #OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
@@ -16,7 +16,7 @@ Transform the BSD-style Makefile into Debian-style
  
  CC?=gcc
  AR?=ar
-@@ -75,7 +75,7 @@
+@@ -76,7 +76,7 @@
  OBJ_TOPLEVEL=${SOURCES_TOPLEVEL:.c=.o}
  
  all:	dMagnetic
@@ -25,7 +25,7 @@ Transform the BSD-style Makefile into Debian-style
  
  clean:
  	rm -rf dMagnetic
-@@ -94,8 +94,8 @@
+@@ -95,8 +95,8 @@
  	cp dMagnetic $(INSTALLBIN)
  	cp dMagnetic.1 $(INSTALLMAN)/man1
  	cp dMagneticini.5 $(INSTALLMAN)/man5
