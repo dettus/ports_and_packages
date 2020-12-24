@@ -1,0 +1,11 @@
+Removes an empty line from the manpage. Gets rid of a groff warning.
+--- a/dMagnetic.1	2020-12-24 10:05:21.804745193 +0100
++++ b/dMagnetic.1	2020-12-24 10:05:32.300785440 +0100
+@@ -301,7 +301,6 @@
+ option offers a way to scale the images. The maximum allowed width is 1024 pixels.
+ .Sh GRAPHICS IN WONDERLAND AND THE MAGNETIC SCROLLS COLLECTION
+ Before you can see the beautiful graphics in "Wonderland", or from the Magnetic Scrolls Collection, you have to type in "graphics" to enable them.
+-
+ .Sh COMMAND LINE OPTIONS
+ .Op Fl bsd
+ .br
