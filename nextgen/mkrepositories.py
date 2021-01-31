@@ -6,8 +6,8 @@ import shutil
 import lzma
 import tarfile
 from contextlib import closing
-prevdebianpackage="dmagnetic_0.28-1"
-versionnum="0.29"
+prevdebianpackage="dmagnetic_0.29-1"
+versionnum="0.30"
 
 
 
@@ -86,7 +86,7 @@ def mkoutputdirs(templatedirnames,dirtemplate,diroutput):
 ###
 
 def httpfile(dirdownload,url,filename):
-	print('downloading '+url+' and writing to '+dirdownload+'/'+filename)
+	print('>> downloading '+url+' and writing to '+dirdownload+'/'+filename)
 	with urllib.request.urlopen(url) as response,open(dirdownload+'/'+filename,'wb') as out_file:
 	        shutil.copyfileobj(response, out_file)
 
