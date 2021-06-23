@@ -1,6 +1,6 @@
 Transform the BSD-style Makefile into Debian-style
---- a/Makefile	Sun Jan 31 14:47:30 2021
-+++ b/Makefile	Sun Jan 31 14:47:30 2021
+--- a/Makefile	2021-06-23 23:47:37.502322244 +0200
++++ b/Makefile	2021-06-23 23:49:15.581269778 +0200
 @@ -23,10 +23,10 @@
  #OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
  #OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
@@ -16,24 +16,21 @@ Transform the BSD-style Makefile into Debian-style
  
  CC?=gcc
  AR?=ar
-@@ -77,7 +77,7 @@
- OBJ_TOPLEVEL=${SOURCES_TOPLEVEL:.c=.o}
+@@ -95,11 +95,11 @@
+ 	mkdir -p $(INSTALLSHARE)/dMagnetic/
  
- all:	dMagnetic dMagnetic.ini
--#	strip dMagnetic
-+#	#strip dMagnetic
- 
- clean:
- 	rm -rf dMagnetic dMagnetic.ini
-@@ -96,8 +96,8 @@
  	cp dMagnetic $(INSTALLBIN)
- 	cp dMagnetic.1 $(INSTALLMAN)/man1
- 	cp dMagneticini.5 $(INSTALLMAN)/man5
--	cp README.txt $(INSTALLSHARE)/dMagnetic
--	cp LICENSE.txt $(INSTALLSHARE)/dMagnetic
+-	cp dMagnetic.6 $(INSTALLMAN)/man6/
+-	cp dMagneticini.5 $(INSTALLMAN)/man5/
+-	cp README.txt $(INSTALLSHARE)/dMagnetic/
+-	cp LICENSE.txt $(INSTALLSHARE)/dMagnetic/
+-	cp dMagnetic.ini $(INSTALLSHARE)/dMagnetic/
++	cp dMagnetic.6 $(INSTALLMAN)/man6
++	cp dMagneticini.5 $(INSTALLMAN)/man5
 +	#cp README.txt $(INSTALLSHARE)/dMagnetic
 +	#cp LICENSE.txt $(INSTALLSHARE)/dMagnetic
- 	cp dMagnetic.ini $(INSTALLSHARE)/dMagnetic
++	cp dMagnetic.ini $(INSTALLSHARE)/dMagnetic
  
  
+ dMagnetic:	$(OBJ_LOADER) $(OBJ_LINEA) $(OBJ_VM68K) $(OBJ_GUI) $(OBJ_TOPLEVEL)
 

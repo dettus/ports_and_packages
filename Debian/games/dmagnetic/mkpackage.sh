@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export VERSION=30
+export VERSION=31
 
 rm -rf dMagnetic_0.${VERSION}.tar.bz2
 rm -rf dmagnetic_0.${VERSION}.orig.tar.gz
