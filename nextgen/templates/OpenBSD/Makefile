@@ -24,7 +24,7 @@ TEST_TARGET =	check
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dMagnetic ${PREFIX}/bin/dMagnetic
-	${INSTALL_MAN} ${WRKSRC}/dMagnetic.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/dMagnetic.6 ${PREFIX}/man/man6
 	${INSTALL_MAN} ${WRKSRC}/dMagneticini.5 ${PREFIX}/man/man5
 	${INSTALL_DATA_DIR} ${PREFIX}/share/dMagnetic
 	${INSTALL_DATA} ${WRKSRC}/dMagnetic.ini ${PREFIX}/share/dMagnetic

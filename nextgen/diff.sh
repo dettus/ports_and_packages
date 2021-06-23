@@ -9,7 +9,7 @@ echo $VERSIONNUM
 	cd repositories
 	cd OpenBSD
 	cd ports/games/
-	cvs -qd anoncvs@anoncvs.ca.openbsd.org:/cvs diff	>../../../games_dMagnetic_openbsd_patch_to_$VERSIONNUM.txt
+	git diff >../../../games_dMagnetic_openbsd_patch_to_$VERSIONNUM.txt
 )
 
 (

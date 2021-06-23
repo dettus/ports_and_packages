@@ -6,8 +6,8 @@ import shutil
 import lzma
 import tarfile
 from contextlib import closing
-prevdebianpackage="dmagnetic_0.29-1"
-versionnum="0.30"
+prevdebianpackage="dmagnetic_0.30-1"
+versionnum="0.31"
 
 
 
@@ -206,8 +206,7 @@ def downloadfiles(dirrepos,dirdownload,packagefilename):
 		(
 			mkdir OpenBSD
 			cd OpenBSD
-			mkdir -p ports/games/
-			cvs -qd anoncvs@anoncvs.ca.openbsd.org:/cvs checkout -P ports/games/dmagnetic
+			git clone https://github.com/openbsd/ports
 		)
 		(
 			mkdir -p FreeBSD
