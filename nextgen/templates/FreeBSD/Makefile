@@ -1,5 +1,3 @@
-# $FreeBSD: head/games/dMagnetic/Makefile 553860 2020-11-01 20:47:45Z dbaio $
-
 PORTNAME=	dMagnetic
 PORTVERSION=	%%VERSIONNUM%%
 CATEGORIES=	games

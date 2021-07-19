@@ -1,4 +1,4 @@
-$NetBSD: distinfo,v 1.6 2020/11/01 16:48:39 wiz Exp $
+$NetBSD: distinfo,v 1.10 2021/06/24 07:28:54 wiz Exp $
 
 SHA1 (dMagnetic_%%VERSIONNUM%%.tar.bz2) = %%SHA1SUMHEX%%
 RMD160 (dMagnetic_%%VERSIONNUM%%.tar.bz2) = %%RMD160SUMHEX%%

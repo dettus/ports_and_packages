@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2020/11/01 20:55:12 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.18 2021/06/23 22:36:56 sthen Exp $
 
 V =		%%VERSIONNUM%%
 COMMENT =	interpreter for Magnetic Scrolls games

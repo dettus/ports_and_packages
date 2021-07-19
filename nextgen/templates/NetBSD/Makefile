@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.6 2020/11/01 16:48:39 wiz Exp $
+# $NetBSD: Makefile,v 1.10 2021/06/24 07:28:54 wiz Exp $
 
 DISTNAME=		dMagnetic_%%VERSIONNUM%%
 PKGNAME=		${DISTNAME:S/_/-/}
@@ -11,15 +11,14 @@ HOMEPAGE=		https://www.dettus.net/dMagnetic/
 COMMENT=		Magnetic Scrolls Interpreter
 LICENSE=		2-clause-bsd
 
-INSTALLATION_DIRS=	bin share/doc/dMagnetic ${PKGMANDIR}/man1 ${PKGMANDIR}/man5
+INSTALLATION_DIRS=	bin share/doc/dMagnetic ${PKGMANDIR}/man5 ${PKGMANDIR}/man6
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dMagnetic ${DESTDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${DESTDIR}${PREFIX}/share/doc/dMagnetic
 	${INSTALL_DATA} ${WRKSRC}/dMagnetic.ini ${DESTDIR}${PREFIX}/share/doc/dMagnetic
-	${INSTALL_MAN} ${WRKSRC}/dMagnetic.6 ${DESTDIR}${PREFIX}/${PKGMANDIR}/man6
 	${INSTALL_MAN} ${WRKSRC}/dMagneticini.5 ${DESTDIR}${PREFIX}/${PKGMANDIR}/man5
-
+	${INSTALL_MAN} ${WRKSRC}/dMagnetic.6 ${DESTDIR}${PREFIX}/${PKGMANDIR}/man6
 
 ## The idea of this test is to check if the output is the expected one.
 ## for this, the md5sum is being compared.
