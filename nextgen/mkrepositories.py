@@ -6,8 +6,8 @@ import shutil
 import lzma
 import tarfile
 from contextlib import closing
-prevdebianpackage="dmagnetic_0.30-1"
-versionnum="0.31"
+prevdebianpackage="dmagnetic_0.31-1"
+versionnum="0.32"
 
 
 
@@ -211,7 +211,7 @@ def downloadfiles(dirrepos,dirdownload,packagefilename):
 		(
 			mkdir -p FreeBSD
 			cd FreeBSD
-			svn checkout svn://svn.FreeBSD.org/ports/head/games/dMagnetic
+			git clone https://github.com/freebsd/ports
 		)
 		(
 			mkdir NetBSD

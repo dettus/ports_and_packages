@@ -17,7 +17,7 @@ echo $VERSIONNUM
 	cd repositories
 	cd FreeBSD
 	cd dMagnetic
-	svn diff >../../games_dMagnetic_freebsd_patch_to_$VERSIONNUM.txt
+	git diff >../../games_dMagnetic_freebsd_patch_to_$VERSIONNUM.txt
 )
 
 (
