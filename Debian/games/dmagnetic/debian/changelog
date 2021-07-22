@@ -1,3 +1,11 @@
+dmagnetic (0.32-1) unstable; urgency=medium
+
+  * New input format: WOZ
+  * Minor bug fixes
+  * Minor code cleanup
+
+ -- Thomas Dettbarn <dettus@dettus.net>  Fri, 23 Jul 2021 00:33:15 +0200
+
 dmagnetic (0.31-1) unstable; urgency=medium
 
   * New input formats: NIB and 2MG
