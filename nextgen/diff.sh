@@ -13,11 +13,12 @@ echo $VERSIONNUM
 )
 
 (
-	cp output/FreeBSD/* repositories/FreeBSD/dMagnetic/
+	cp output/FreeBSD/* repositories/FreeBSD/freebsd-ports/games/dMagnetic/
 	cd repositories
 	cd FreeBSD
+	cd freebsd-ports/games
 	cd dMagnetic
-	git diff >../../games_dMagnetic_freebsd_patch_to_$VERSIONNUM.txt
+	git diff >../../../../games_dMagnetic_freebsd_patch_to_$VERSIONNUM.txt
 )
 
 (

@@ -1,4 +1,3 @@
-  * New input formats: NIB and 2MG
-  * Improved Sixel mode
-  * New -dumpmag and -dumpgfx command line parameters
-  * Moved the manpage to section 6 (games)
+  * New input format: WOZ
+  * Minor bug fixes
+  * Minor code cleanup
