@@ -1,3 +1,2 @@
-  * New input format: WOZ
-  * Minor bug fixes
-  * Minor code cleanup
+  * Minor bugfixes
+  * New feature "-nodoc" for players without a manual

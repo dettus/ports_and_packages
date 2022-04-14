@@ -6,8 +6,9 @@ import shutil
 import lzma
 import tarfile
 from contextlib import closing
+import hashlib
 prevdebianpackage="dmagnetic_0.30-1"
-versionnum="0.32"
+versionnum="0.33"
 
 
 
@@ -18,7 +19,7 @@ versionnum="0.32"
 from datetime import datetime
 import hashlib
 import base64
-from Crypto.Hash import RIPEMD
+#from Crypto.Hash import RIPEMD
 def mymd5(fname):
 	hash_md5 = hashlib.md5()
 	with open(fname, "rb") as f:
@@ -56,7 +57,8 @@ def mysha512(fname):
 	return hash_sha512.hexdigest()
 
 def myrmd160(fname):
-	hash_rmd160=RIPEMD.new()
+#	hash_rmd160=RIPEMD.new()
+	hash_rmd160=hashlib.new("ripemd160")
 	with open(fname, "rb") as f:
 		for chunk in iter(lambda: f.read(4096), b""):
 			hash_rmd160.update(chunk)

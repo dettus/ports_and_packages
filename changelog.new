@@ -1,2 +1,2 @@
-  * Removed a bug that prevented loading game binaries
-  * Loads binaries from Amstrad CPC, Commodore64 and MS DOS
+  * Minor bugfixes
+  * New feature "-nodoc" for players without a manual
