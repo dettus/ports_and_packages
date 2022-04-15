@@ -1,6 +1,0 @@
-$NetBSD: distinfo,v 1.6 2020/11/01 16:48:39 wiz Exp $
-
-SHA1 (dMagnetic_0.27.tar.bz2) = 4b0c2a8f4755ae43a9bc5bba5985a9e4700ce5f3
-RMD160 (dMagnetic_0.27.tar.bz2) = e20001d7a83b8d986ba697bf94e7c68ac05675f8
-SHA512 (dMagnetic_0.27.tar.bz2) = 932e9b15eeb313a47ae2cca86316926cf4987a115dd31b7efa06669bb7bf056b6f289baa72ffc27fe1ff153f6ed96b06fd268b703479dfaaacd6a76e8a8dcd25
-Size (dMagnetic_0.27.tar.bz2) = 72832 bytes

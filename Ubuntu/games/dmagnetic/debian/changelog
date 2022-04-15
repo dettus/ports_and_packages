@@ -1,6 +1,0 @@
-dmagnetic (0.13-1) UNRELEASED; urgency=low
-
-  * Initial release. Closes: #nnnn
-    <nnnn is the bug number of your ITP>
-
- -- Thomas Dettbarn <dettus@dettus.net>  Sat, 25 May 2019 20:00:10 +0200
