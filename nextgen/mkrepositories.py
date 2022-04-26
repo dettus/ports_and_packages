@@ -8,7 +8,7 @@ import tarfile
 from contextlib import closing
 import hashlib
 prevdebianpackage="dmagnetic_0.32-1"
-versionnum="0.33"
+versionnum="0.34"
 
 
 

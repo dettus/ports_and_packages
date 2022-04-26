@@ -1,2 +1,3 @@
   * Minor bugfixes
-  * New feature "-nodoc" for players without a manual
+  * Slightly updated documentation
+  * Popular feature "-nodoc" had an issue with saved games.
