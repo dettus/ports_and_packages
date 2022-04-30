@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Thomas Dettbarn <dettus@dettus.net>
 Build-Depends: debhelper (>=12)
 Rules-Requires-Root: no
-Standards-Version: 4.5.0
+Standards-Version: 4.6.0.1
 Homepage: https://www.dettus.net/dMagnetic/
 
 Package: dmagnetic
