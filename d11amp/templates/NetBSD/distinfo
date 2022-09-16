@@ -1,0 +1,6 @@
+$NetBSD: distinfo,v 1.10 2021/06/24 07:28:54 wiz Exp $
+
+SHA1 (d11amp_%%VERSIONNUM%%.tar.bz2) = %%SHA1SUMHEX%%
+RMD160 (d11amp_%%VERSIONNUM%%.tar.bz2) = %%RMD160SUMHEX%%
+SHA512 (d11amp_%%VERSIONNUM%%.tar.bz2) = %%SHA512SUMHEX%%
+Size (d11amp_%%VERSIONNUM%%.tar.bz2) = %%FILESIZE%% bytes

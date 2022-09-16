@@ -1,0 +1,5 @@
+You can always try with one of the «universal packages»:
+- Snap https://ubuntu.com/tutorials/create-your-first-snap...
+- AppImage https://discourse.appimage.org/.../how-to-create-an.../155
+- Flatpak https://docs.flatpak.org/en/latest/first-build.html
+
