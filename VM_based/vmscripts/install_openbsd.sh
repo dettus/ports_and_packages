@@ -1,6 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 
 
+sudo date # to make sudo happy :)
 echo "***"
 echo "*** Please perform the following steps:"
 echo "*** [ ] Set up a user 'user'"
@@ -11,11 +12,11 @@ echo "***"
 echo "*** Once the installation is finished, reboot the machine, and enter 'openbsd' here"
 echo "***"
 
-sudo sh vmscripts/a_run_openbsd.sh &
+sudo sh vmscripts/a_run_openbsd.sh 
 
-export H=""
+export H="."
 
-while [ ! $H == "openbsd" ]
+while [ "_"$H != "_openbsd" ]
 do
 	echo "please enter 'openbsd' when the installation has finished."
 	read H

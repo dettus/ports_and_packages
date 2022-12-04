@@ -19,6 +19,6 @@ qemu-system-x86_64 --enable-kvm -m 4096 -smp cpus=1,cores=1 \
 	-device virtio-net-pci,netdev=network0 \
 	-netdev user,id=network0,hostfwd=tcp::2003-:22 \
 	-display vnc=:3
-)
+) &
 
 
