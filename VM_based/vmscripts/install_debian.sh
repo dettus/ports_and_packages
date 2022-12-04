@@ -59,5 +59,5 @@ ssh -i Keys/ssh-keyfile -l root -p 2004 localhost "apt-file update"
 echo "***"
 echo "*** Installation done. Shutting VM down"
 echo "***"
-#ssh -i Keys/ssh-keyfile -l root -p 2004 localhost "/usr/sbin/halt -p"
+ssh -i Keys/ssh-keyfile -l root -p 2004 localhost "/usr/sbin/halt -p"
 
