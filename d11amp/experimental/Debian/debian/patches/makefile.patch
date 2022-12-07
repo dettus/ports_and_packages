@@ -1,7 +1,7 @@
-Transform the BSD-style Makefile into Debian-style
---- a/Makefile	2022-12-06 19:51:36.375877853 +0100
-+++ b/Makefile	2022-12-06 19:52:11.552353325 +0100
-@@ -23,10 +23,10 @@
+Changes the BSD-style Makefile into a Debian-style one.
+--- a/Makefile	2022-12-07 17:49:46.221746622 +0100
++++ b/Makefile	2022-12-07 17:51:04.113725260 +0100
+@@ -23,15 +23,15 @@
  #OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
  #OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  
@@ -16,3 +16,9 @@ Transform the BSD-style Makefile into Debian-style
  
  
  CC?=gcc
+ AR?=ar
+-CFLAGS= -O3 -Os
++CFLAGS= -O3 -g
+ #CFLAGS?=-O0 -g
+ CFLAGS+=-Wall
+ #CFLAGS+=-Werror

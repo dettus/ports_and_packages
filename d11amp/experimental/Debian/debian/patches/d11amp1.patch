@@ -1,0 +1,17 @@
+Typo in the manpage.
+--- a/d11amp.1	2022-12-07 18:07:40.613502262 +0100
++++ b/d11amp.1	2022-12-07 18:22:03.725019710 +0100
+@@ -30,11 +30,11 @@
+ .Nm
+ .Op --audiooutput.portaudio.device=NUMBER
+ .br
+-The audio output is being handled through the portaudio library. This allows to select any audio output present in the device on which
++The audio output is being handled through the portaudio library. This allows one to select any audio output present in the device on which
+ .Nm
+ has been started. The outputs are identified through a number, and a list of available outputs can be seen by using a question mark instead of the number.
+ .br
+-The default audio output device can be adressed by using -1.
++The default audio output device can be addressed by using -1.
+ .Pp
+ .Nm
+ .Op --bsd
