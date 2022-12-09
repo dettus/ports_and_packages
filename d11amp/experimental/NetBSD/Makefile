@@ -1,3 +1,4 @@
+# $NetBSD$
 
 DISTNAME=		d11amp_0.59
 PKGNAME=		${DISTNAME:S/_/-/}

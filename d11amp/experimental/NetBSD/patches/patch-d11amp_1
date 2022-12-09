@@ -1,6 +1,5 @@
-Typos in the manpage.
---- d11amp.1.orig      2022-12-07 18:40:54.551637309 +0100
-+++ d11amp.1   2022-12-07 18:41:17.196146490 +0100
+--- d11amp.1.orig	2022-11-27 18:03:47.000000000 +0000
++++ d11amp.1	2022-12-09 14:53:32.588689533 +0000
 @@ -30,11 +30,11 @@
  .Nm
  .Op --audiooutput.portaudio.device=NUMBER
@@ -15,4 +14,3 @@ Typos in the manpage.
  .Pp
  .Nm
  .Op --bsd
-
