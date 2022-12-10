@@ -13,6 +13,9 @@ LICENSE=		2-clause-bsd
 
 INSTALLATION_DIRS=	bin  ${PKGMANDIR}/man1
 
+USE_TOOLS+=		pkg-config
+
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/d11amp ${DESTDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/d11amp.1 ${DESTDIR}${PREFIX}/${PKGMANDIR}/man1
