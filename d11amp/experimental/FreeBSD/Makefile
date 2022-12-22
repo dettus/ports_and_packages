@@ -1,7 +1,7 @@
-V=		0.59
 COMMENT=	Simple MP3 player
+
 PORTNAME=	d11amp
-PORTVERSION=	${V}
+PORTVERSION=	0.59
 CATEGORIES=	audio
 MASTER_SITES=	https://www.dettus.net/d11amp/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -13,11 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 		
 LIB_DEPENDS=	libmpg123.so:audio/mpg123 \
-		libgdk_pixbuf-2.0.so:graphics/gdk-pixbuf2	\
-		libgtk-4.so:x11-toolkits/gtk40		\
 		libportaudio.so:audio/portaudio	\
 		libzip.so:archivers/libzip
-USES=		tar:bz2 pkgconfig
+USES=		tar:bz2 pkgconfig gnome
+USE_GNOME=	gdkpixbuf2 gtk40
 
 TEST_ENV=	SHA256_CMD=sha256 TMP_DIR=/tmp/d11amp/
 TEST_TARGET=	check
