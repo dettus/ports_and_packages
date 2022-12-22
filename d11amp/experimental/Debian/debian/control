@@ -2,27 +2,13 @@ Source: d11amp
 Section: sound
 Priority: optional
 Maintainer: Thomas Dettbarn <dettus@dettus.net>
-Build-Depends: debhelper (>=11),
-               debhelper-compat (= 13),
-               libc6 (>= 2.34),
-               libcairo2 (>= 1.2.4),
-               libgdk-pixbuf-2.0-0 (>= 2.22.0),
-               libglib2.0-0 (>= 2.31.8),
-               libgtk-4-1 (>= 4.0.0),
-               libmpg123-0 (>= 1.28.0),
-               libportaudio2 (>= 19+svn20101113),
-               libzip4 (>= 0.10)
-Depends: libc.so.6,
-         libcairo.so.2,
-         libgdk_pixbuf-2.0.so.0,
-         libgio-2.0.so.0,
-         libglib-2.0.so.0,
-         libgobject-2.0.so.0,
-         libgtk-4.so.1,
-         libm.so.6,
-         libmpg123.so.0,
-         libportaudio.so.2,
-         libzip.so.4
+Build-Depends: debhelper-compat (= 13),
+               libgdk-pixbuf-2.0-dev (>= 2.22.0),
+               libgtk-4-dev (>= 4.0.0),
+               libmpg123-dev (>= 1.28.0),
+               libzip-dev (>= 0.10),
+               portaudio19-dev,
+               pkgconf
 Rules-Requires-Root: no
 Standards-Version: 4.6.1.0
 Homepage: https://www.dettus.net/d11amp/
@@ -32,7 +18,7 @@ Vcs-Browser: https://github.com/dettus/d11amp/
 Package: d11amp
 Architecture: any
 Multi-Arch: foreign
-Depends: ${shlib:Depends},${misc:Depends}
+Depends: ${shlibs:Depends},${misc:Depends}
 Description: Simple MP3 player
  d11amp is a frontend to MPG123, trying to resemble WinAmp, utilizing its
  treasure trove of themes. It has been published under the BSD 2-clause

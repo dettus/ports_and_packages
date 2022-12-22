@@ -1,7 +1,7 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: dmagnetic
+Upstream-Name: d11amp
 Upstream-Contact: Thomas Dettbarn <dettus@dettus.net>
-Source: https://www.dettus.net/dMagnetic/
+Source: https://www.dettus.net/d11amp/
 #
 # Please double check copyright with the licensecheck(1) command.
 
