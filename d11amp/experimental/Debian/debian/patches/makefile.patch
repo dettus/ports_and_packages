@@ -18,7 +18,7 @@ Changes the BSD-style Makefile into a Debian-style one.
  CC?=gcc
  AR?=ar
 -CFLAGS= -O3 -Os
-+CFLAGS= -O3 -g
++CFLAGS?= -O3 -g
  #CFLAGS?=-O0 -g
  CFLAGS+=-Wall
  #CFLAGS+=-Werror

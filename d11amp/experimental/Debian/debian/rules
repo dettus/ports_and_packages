@@ -3,9 +3,6 @@
 export DH_VERBOSE = 1
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
-ifneq (,$(filter $(DEB_HOST_ARCH), i386))
-	export DEB_CFLAGS_MAINT_APPEND += -ffloat-store
-endif
 export SHA256_CMD=sha256sum
 
 %:

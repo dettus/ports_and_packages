@@ -19,7 +19,6 @@ Package: d11amp
 Architecture: any
 Multi-Arch: foreign
 Depends: ${shlibs:Depends},${misc:Depends}
-Description: Simple MP3 player
+Description: Oldskool MP3 player
  d11amp is a frontend to MPG123, trying to resemble WinAmp, utilizing its
- treasure trove of themes. It has been published under the BSD 2-clause
- license.
+ treasure trove of themes. It looks badass-oldskool.
