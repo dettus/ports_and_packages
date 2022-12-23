@@ -1,7 +1,6 @@
-Make the Makefile work in the ports tree.
---- Makefile.orig	2022-12-07 18:40:47.911485894 +0100
-+++ Makefile	2022-12-07 18:46:14.805995288 +0100
-@@ -31,35 +31,36 @@
+--- Makefile.orig	2022-11-27 18:03:47 UTC
++++ Makefile
+@@ -31,35 +31,36 @@ INSTALLMAN=$(PREFIX)/share/man
  
  CC?=gcc
  AR?=ar
@@ -13,7 +12,7 @@ Make the Makefile work in the ports tree.
  PROJ_HOME=./
  INCFLAGS= -I$(PROJ_HOME)src/
  LINK=$(CC)
-+LINKFLAGS=""
++LINKFLAGS="-Wl,--as-needed"
  
  # Library gdk-pixbuf
 -LDFLAGS+= `pkg-config    --libs gdk-pixbuf-2.0`
@@ -50,7 +49,7 @@ Make the Makefile work in the ports tree.
  
  
  
-@@ -125,7 +126,7 @@
+@@ -125,7 +126,7 @@ install: d11amp d11amp.1
  	cp d11amp.1 $(INSTALLMAN)/man1/
  
  d11amp: $(OBJFILES)
