@@ -12,7 +12,7 @@
  PROJ_HOME=./
  INCFLAGS= -I$(PROJ_HOME)src/
  LINK=$(CC)
-+LINKFLAGS="-Wl,--as-needed"
++LINKFLAGS=-Wl,--as-needed
  
  # Library gdk-pixbuf
 -LDFLAGS+= `pkg-config    --libs gdk-pixbuf-2.0`
