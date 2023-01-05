@@ -30,6 +30,10 @@ FAKE_FLAGS=	INSTALLMAN="${WRKINST}${PREFIX}/man"
 TEST_ENV=	SHA256_CMD=sha256 TMP_DIR=/tmp/d11amp/
 TEST_TARGET=	check
 
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/d11amp ${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/d11amp.1 ${PREFIX}/man/man1/
+
 .include <bsd.port.mk>
 
 
