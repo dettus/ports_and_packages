@@ -1,0 +1,6 @@
+d11amp (0.59-1) unstable; urgency=low
+
+  * initial release.
+  * Closes: #1025668
+
+ -- Thomas Dettbarn <dettus@dettus.net>  Wed,  7 Dec 2022 17:33:13 +0200

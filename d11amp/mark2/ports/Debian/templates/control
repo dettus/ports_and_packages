@@ -1,0 +1,24 @@
+Source: d11amp
+Section: sound
+Priority: optional
+Maintainer: Thomas Dettbarn <dettus@dettus.net>
+Build-Depends: debhelper-compat (= 13),
+               libgdk-pixbuf-2.0-dev (>= 2.22.0),
+               libgtk-4-dev (>= 4.0.0),
+               libmpg123-dev (>= 1.28.0),
+               libzip-dev (>= 0.10),
+               portaudio19-dev,
+               pkgconf
+Rules-Requires-Root: no
+Standards-Version: 4.6.1.0
+Homepage: https://www.dettus.net/d11amp/
+Vcs-Git: https://github.com/dettus/d11amp.git
+Vcs-Browser: https://github.com/dettus/d11amp/
+
+Package: d11amp
+Architecture: any
+Multi-Arch: foreign
+Depends: ${shlibs:Depends},${misc:Depends}
+Description: Oldskool MP3 player
+ d11amp is a frontend to MPG123, trying to resemble WinAmp, utilizing its
+ treasure trove of themes. It looks badass-oldskool.
