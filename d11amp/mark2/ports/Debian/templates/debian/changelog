@@ -1,0 +1,14 @@
+d11amp (0.61-1) unstable; urgency=low
+
+  * Improved playlist
+  * Improved keyboard control
+  * Improved output options
+
+ -- Thomas Dettbarn <dettus@dettus.net>  Fri,  6 Jan 2023 00:00:13 +0200
+
+d11amp (0.59-1) unstable; urgency=low
+
+  * initial release.
+  * Closes: #1025668
+
+ -- Thomas Dettbarn <dettus@dettus.net>  Wed,  7 Dec 2022 17:33:13 +0200

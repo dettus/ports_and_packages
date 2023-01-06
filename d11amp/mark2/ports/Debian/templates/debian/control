@@ -20,5 +20,5 @@ Architecture: any
 Multi-Arch: foreign
 Depends: ${shlibs:Depends},${misc:Depends}
 Description: Oldskool MP3 player
- d11amp is a frontend to MPG123, trying to resemble WinAmp, utilizing its
- treasure trove of themes. It looks badass-oldskool.
+ d11amp is an oldskool MP3 player. In addition to being a frontend to
+ mpg123, it can handle WinAMP's treasure trove of skins. Looks awesome!
