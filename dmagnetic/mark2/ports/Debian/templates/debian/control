@@ -2,7 +2,7 @@ Source: dmagnetic
 Section: games
 Priority: optional
 Maintainer: Thomas Dettbarn <dettus@dettus.net>
-Build-Depends: debhelper (>=12)
+Build-Depends: debhelper (>=13)
 Rules-Requires-Root: no
 Standards-Version: 4.6.1.0
 Homepage: https://www.dettus.net/dMagnetic/

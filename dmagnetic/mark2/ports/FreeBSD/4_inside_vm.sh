@@ -1,9 +1,9 @@
 #!/bin/sh
 
-mkdir -p /usr/ports/audio/dmagnetic
+mkdir -p /usr/ports/games/dMagnetic
 cd /usr/ports/games
 git pull
-cd d11amp
+cd dMagnetic
 tar xvfz /root/PACKAGE_IN.tar.gz
 git rm patches/*
 make makesum

@@ -1,8 +1,9 @@
 #!/usr/bin/env python3 -i
 import os
 import shutil
+import sys
 
-versionnum="0.61"
+versionnum=sys.argv[1]
 macros={
 	"%%VERSIONNUMBERHERE%%":versionnum
 }
