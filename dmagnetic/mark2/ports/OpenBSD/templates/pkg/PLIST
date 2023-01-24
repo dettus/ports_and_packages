@@ -1,0 +1,7 @@
+@bin bin/dMagnetic
+@man man/man5/dMagneticini.5
+@man man/man6/dMagnetic.6
+share/dMagnetic/
+share/dMagnetic/LICENSE.txt
+share/dMagnetic/README.txt
+share/dMagnetic/dMagnetic.ini
