@@ -30,7 +30,7 @@ License:   BSD-2-Clause
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 Files: debian/*
-Copyright: 2022 Thomas Dettbarn <dettus@dettus.net>
+Copyright: 2023 Thomas Dettbarn <dettus@dettus.net>
 License:   GPL-2+
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
