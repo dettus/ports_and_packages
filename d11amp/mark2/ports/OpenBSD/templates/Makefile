@@ -1,4 +1,4 @@
-COMMENT=	Simple MP3 player
+COMMENT=	simple MP3 player
 
 V=		%%VERSIONNUMBERHERE%%
 DISTNAME=	d11amp_${V}
@@ -19,10 +19,10 @@ WANTLIB += pango-1.0 pangocairo-1.0 portaudio pthread zip
 MASTER_SITES=	https://www.dettus.net/d11amp/
 
 LIB_DEPENDS=	graphics/gdk-pixbuf2	\
-		x11/gtk+4	\
+		x11/gtk+4		\
 		archivers/libzip	\
 		audio/mpg123		\
-		audio/portaudio-svn		
+		audio/portaudio-svn
 	
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 FAKE_FLAGS=	INSTALLMAN="${WRKINST}${PREFIX}/man"
