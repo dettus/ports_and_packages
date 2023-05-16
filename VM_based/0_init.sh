@@ -7,10 +7,10 @@ echo "*** Downloading installation iso images"
 echo "***"
 (
  cd Downloads
- wget -c "https://ftp.fau.de/pub/OpenBSD/7.2/amd64/install72.iso"
- wget -c "https://download.freebsd.org/ftp/releases/ISO-IMAGES/13.1/FreeBSD-13.1-RELEASE-amd64-dvd1.iso"
+ wget -c "https://ftp.fau.de/pub/OpenBSD/7.3/amd64/install73.iso"
+ wget -c "https://download.freebsd.org/ftp/releases/ISO-IMAGES/13.2/FreeBSD-13.2-RELEASE-amd64-dvd1.iso"
  wget -c "https://cdn.netbsd.org/pub/NetBSD/NetBSD-9.3/images/NetBSD-9.3-amd64.iso"
- wget -c "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-11.5.0-amd64-netinst.iso"
+ wget -c "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-11.7.0-amd64-netinst.iso"
  )
 
 echo "***"

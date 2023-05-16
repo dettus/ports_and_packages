@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-sudo date # to make sudo happy :)
+date # to make happy :)
 echo "***"
 echo "*** Please perform the following steps:"
 echo "*** [ ] Set up a user 'user'"
@@ -12,7 +12,7 @@ echo "***"
 echo "*** Once the installation is finished, reboot the machine, and enter 'openbsd' here"
 echo "***"
 
-sudo sh vmscripts/a_run_openbsd.sh 
+sh vmscripts/a_run_openbsd.sh 
 
 export H="."
 

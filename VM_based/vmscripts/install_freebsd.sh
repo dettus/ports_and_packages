@@ -2,7 +2,7 @@
 
 
 
-sudo date	# to make sudo happy :) 
+date	# to make happy :) 
 echo "***"
 echo "*** Please perform the following steps:"
 echo "*** [ ] Set up a root password"
@@ -11,7 +11,7 @@ echo "*** [ ] Change the /etc/ssh/sshd_config so that it PermitRootLogin yes is 
 echo "*** Once the installation is finished, reboot the machine, and enter 'freebsd' here"
 echo "***"
 
-sudo  sh vmscripts/b_run_freebsd.sh 
+sh vmscripts/b_run_freebsd.sh 
 
 export H="."
 

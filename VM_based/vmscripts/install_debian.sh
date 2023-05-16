@@ -2,14 +2,14 @@
 
 
 
-sudo date	# to make sudo happy :) 
+date	# to make happy :) 
 echo "***"
 echo "*** Please perform the following steps:"
 echo "*** [ ] Change the /etc/ssh/sshd_config to say PermitRootLogin yes"
 echo "*** Once the installation is finished, reboot the machine, and enter 'debian' here"
 echo "***"
 
-sudo  sh vmscripts/d_run_debian.sh
+sh vmscripts/d_run_debian.sh
 
 export H="."
 
@@ -54,7 +54,7 @@ echo "*** Installing packages"
 echo "***"
 ssh -i Keys/ssh-keyfile -l root -p 2004 localhost "apt -y update"
 #ssh -i Keys/ssh-keyfile -l root -p 2004 localhost "( echo 'yes' ; echo '2' ) | apt -y upgrade"
-#ssh -i Keys/ssh-keyfile -l root -p 2004 localhost "apt -y install apt-file sudo"
+#ssh -i Keys/ssh-keyfile -l root -p 2004 localhost "apt -y install apt-file doas"
 #ssh -i Keys/ssh-keyfile -l root -p 2004 localhost "apt-file update"
 
 echo "***"

@@ -2,7 +2,7 @@
 
 
 
-sudo date	# to make sudo happy :) 
+date	# to make happy :) 
 echo "***"
 echo "*** Please perform the following steps:"
 echo "*** [ ] e/c: CONFIGURE THE NETWORK"
@@ -13,7 +13,7 @@ echo "*** [ ] Change the /etc/ssh/sshd_config to say PermitRootLogin yes"
 echo "*** Once the installation is finished, reboot the machine, and enter 'netbsd' here"
 echo "***"
 
-sudo  sh vmscripts/c_run_netbsd.sh 
+sh vmscripts/c_run_netbsd.sh 
 
 export H="."
 
