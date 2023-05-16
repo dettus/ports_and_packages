@@ -35,11 +35,15 @@ echo "*** Installing ssh key"
 echo "*** Please enter the passwords for the virtual machine here"
 echo "***"
 (
+echo "*** ROOT ***"
  ssh -p 2002 -l root localhost "mkdir -p .ssh"
+echo "*** USER ***"
  ssh -p 2002 -l user localhost "mkdir -p .ssh"
 
 
+echo "*** ROOT ***"
  scp -P 2002 Keys/ssh-keyfile.pub root@localhost:.ssh/authorized_keys
+echo "*** USER ***"
  scp -P 2002 Keys/ssh-keyfile.pub user@localhost:.ssh/authorized_keys
 )
 
