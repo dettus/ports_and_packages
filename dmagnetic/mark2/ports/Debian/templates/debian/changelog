@@ -1,3 +1,19 @@
+dmagnetic (0.37-1) unstable; urgency=medium
+
+  * Minor bugfixes
+  * Reduced memory consumption
+  * Better help screens
+
+ -- Thomas Dettbarn <dettus@dettus.net>  Tue, 16 May 2023 22:54:49 +0200
+
+dmagnetic (0.36-1) unstable; urgency=medium
+
+  * Minor bugfixes
+  * Backend engine can be encapsulated in a library
+  * HelloWorld example for interested frontend developers
+
+ -- Thomas Dettbarn <dettus@dettus.net>  Sat, 28 Jan 2023 22:52:19 +0200
+
 dmagnetic (0.35-1) unstable; urgency=medium
 
   * Minor bugfixes
