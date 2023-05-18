@@ -21,13 +21,4 @@ MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 TEST_ENV=	SHA256_CMD=sha256
 TEST_TARGET=	check
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dMagnetic ${PREFIX}/bin/dMagnetic
-	${INSTALL_MAN} ${WRKSRC}/dMagneticini.5 ${PREFIX}/man/man5
-	${INSTALL_MAN} ${WRKSRC}/dMagnetic.6 ${PREFIX}/man/man6
-	${INSTALL_DATA_DIR} ${PREFIX}/share/dMagnetic
-	${INSTALL_DATA} ${WRKSRC}/dMagnetic.ini ${PREFIX}/share/dMagnetic
-	${INSTALL_DATA} ${WRKSRC}/LICENSE.txt ${PREFIX}/share/dMagnetic
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${PREFIX}/share/dMagnetic
-
 .include <bsd.port.mk>

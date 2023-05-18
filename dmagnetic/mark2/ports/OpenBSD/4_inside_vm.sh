@@ -9,10 +9,13 @@ make makesum
 #  cd /usr/ports/pobj/dmagnetic-0.35/d11amp_0.35/
 #  sh /root/package_patch.sh
 #)
-
+(
+	cd `make show=WRKSRC`
+	tar xvfz /root/patches_in.tar.gz
+)
 make update-patches
 git add patches/*
 
-git diff --staged >/root/package_out.patch
+git diff >/root/package_out.patch
 
 

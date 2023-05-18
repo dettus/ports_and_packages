@@ -55,9 +55,20 @@ def makepackage(portsdir):
 	shutil.make_archive(portsdir+"/PACKAGE_IN","gztar",basedir,rootdir)
 
 
+
+def makepatch(portsdir):
+	basedir=portsdir+"/patches_0.37"
+	rootdir="."
+	print(basedir)
+	print(rootdir)
+	shutil.make_archive(portsdir+"/patches","gztar",basedir,rootdir)
+
+
 shutil.copy("changelog","ports/Debian/templates/debian/")
 
 for ports in ["OpenBSD","FreeBSD","NetBSD","Debian"]:
 	makepackage("ports/"+ports)
 
+for ports in ["OpenBSD"]:
+	makepatch("ports/"+ports)
 
