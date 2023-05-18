@@ -12,6 +12,7 @@ make makesum
 (
 	PORTSDIR=`pwd`
 	make extract
+	
 	cd `make -V WRKSRC`
 	tar xvfz /root/PATCHES_IN.tar.gz
 	
@@ -22,10 +23,9 @@ make makesum
 )
 
 #make update-patches
-#git add *
+git add files/*
 
-git diff >/root/package_out.patch
-git diff >>/root/package_out.patch
+git diff main >/root/package_out.patch
 
 make clean
 make distclean
