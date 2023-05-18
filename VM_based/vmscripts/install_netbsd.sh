@@ -62,6 +62,7 @@ echo "*** Installing packages"
 echo "***"
 
 ssh -i Keys/ssh-keyfile -l root -p 2003 localhost "/usr/sbin/pkg_add doas"
+ssh -i Keys/ssh-keyfile -l root -p 2003 localhost "cd /usr && cvs -q -z2 -d anoncvs@anoncvs.NetBSD.org:/cvsroot checkout -P pkgsrc"
 
 echo "***"
 echo "*** Installation done. Shutting VM down"
