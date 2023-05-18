@@ -10,12 +10,18 @@ make makesum
 #  sh /root/package_patch.sh
 #)
 (
+	make extract
 	cd `make show=WRKSRC`
-	tar xvfz /root/patches_in.tar.gz
+	tar xvfz /root/PATCHES_IN.tar.gz
 )
+
 make update-patches
 git add patches/*
 
 git diff >/root/package_out.patch
+git diff --staged >>/root/package_out.patch
 
+make clean
+make distclean
+make install
 

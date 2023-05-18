@@ -61,7 +61,7 @@ def makepatch(portsdir):
 	rootdir="."
 	print(basedir)
 	print(rootdir)
-	shutil.make_archive(portsdir+"/patches","gztar",basedir,rootdir)
+	shutil.make_archive(portsdir+"/PATCHES_IN","gztar",basedir,rootdir)
 
 
 shutil.copy("changelog","ports/Debian/templates/debian/")
