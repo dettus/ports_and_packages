@@ -29,5 +29,5 @@ git diff main >/root/package_out.patch
 
 make clean
 make distclean
-make uninstall
+make deinstall
 make install

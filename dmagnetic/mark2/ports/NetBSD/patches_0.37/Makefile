@@ -25,7 +25,7 @@
 
 PREFIX?=/usr/local
 DESTDIR?=/usr/local
-MYPREFIX=$(DESTDIR)$(PREFIX)
+MYPREFIX=$(DESTDIR)
 INSTALLBIN=$(MYPREFIX)/bin
 INSTALLSHARE=$(MYPREFIX)/share/doc
 INSTALLMAN=$(MYPREFIX)/man
@@ -102,7 +102,7 @@ install: all dMagnetic.6 dMagneticini.5
 	install -m 755 -s dMagnetic $(INSTALLBIN)/dMagnetic
 	install -m 644 dMagneticini.5 $(INSTALLMAN)/man5/dMagneticini.5
 	install -m 644 dMagnetic.6 $(INSTALLMAN)/man6/dMagnetic.6
-	install -m 644 README.txt $(INSTALLDOC)/dMagnetic/README.txt
+	install -m 644 README.txt $(INSTALLSHARE)/dMagnetic/README.txt
 	install -m 644 LICENSE.txt $(INSTALLSHARE)/dMagnetic/LICENSE.txt
 	cp dMagnetic.ini $(INSTALLSHARE)/dMagnetic/
 

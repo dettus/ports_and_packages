@@ -11,6 +11,7 @@ HOMEPAGE=		https://www.dettus.net/dMagnetic/
 COMMENT=		Magnetic Scrolls Interpreter
 LICENSE=		2-clause-bsd
 
+INSTALL_MAKE_FLAGS=	INSTALL_MAKE_FLAGS=     MYPREFIX="${DESTDIR}${PREFIX}"
 INSTALLATION_DIRS=	bin share/doc/dMagnetic ${PKGMANDIR}/man5 ${PKGMANDIR}/man6
 
 ## The idea of this test is to check if the output is the expected one.
