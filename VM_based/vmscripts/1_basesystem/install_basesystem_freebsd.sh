@@ -1,7 +1,5 @@
 #!/bin/bash
 
-
-
 date	# to make happy :) 
 echo "***"
 echo "*** Please perform the following steps:"
@@ -11,7 +9,7 @@ echo "*** [ ] Change the /etc/ssh/sshd_config so that it PermitRootLogin yes is 
 echo "*** Once the installation is finished, reboot the machine, and enter 'freebsd' here"
 echo "***"
 
-sh vmscripts/b_run_freebsd.sh 
+sh vmscripts/3_run/b_run_freebsd.sh 
 
 export H="."
 
@@ -53,15 +51,6 @@ echo "*** Testing keys"
 echo "***"
 ssh -i Keys/ssh-keyfile -l root -p 2002 localhost "id"
 ssh -i Keys/ssh-keyfile -l user -p 2002 localhost "id"
-
-
-echo "***"
-echo "*** Installing packages"
-echo "***"
-
-ssh -i Keys/ssh-keyfile -l root -p 2002 localhost "yes | pkg install git bzip2"
-ssh -i Keys/ssh-keyfile -l root -p 2002 localhost "cd /usr ; git clone https://github.com/freebsd/freebsd-ports ports"
-
 
 
 echo "***"

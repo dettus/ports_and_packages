@@ -1,7 +1,5 @@
 #!/bin/bash
 
-
-
 date	# to make happy :) 
 echo "***"
 echo "*** Please perform the following steps:"
@@ -13,7 +11,7 @@ echo "*** [ ] Change the /etc/ssh/sshd_config to say PermitRootLogin yes"
 echo "*** Once the installation is finished, reboot the machine, and enter 'netbsd' here"
 echo "***"
 
-sh vmscripts/c_run_netbsd.sh 
+sh vmscripts/3_run/c_run_netbsd.sh 
 
 export H="."
 
@@ -45,6 +43,7 @@ echo "***"
 
  echo "*** ROOT ***"
  scp -P 2003 Keys/ssh-keyfile.pub root@localhost:.ssh/authorized_keys
+ ssh -p 2003 -l root localhost "chown -R root:wheel /root"
  echo "*** USER ***"
  scp -P 2003 Keys/ssh-keyfile.pub user@localhost:.ssh/authorized_keys
 )
@@ -56,16 +55,6 @@ echo "***"
 ssh -i Keys/ssh-keyfile -l root -p 2003 localhost "id"
 ssh -i Keys/ssh-keyfile -l user -p 2003 localhost "id"
 
-
-echo "***"
-echo "*** Installing packages"
-echo "***"
-
-ssh -i Keys/ssh-keyfile -l root -p 2003 localhost "/usr/sbin/pkg_add doas"
-ssh -i Keys/ssh-keyfile -l root -p 2003 localhost "/usr/sbin/pkg_add pkgdiff"
-ssh -i Keys/ssh-keyfile -l root -p 2003 localhost "/usr/sbin/pkg_add git"
-#ssh -i Keys/ssh-keyfile -l root -p 2003 localhost "cd /usr && cvs -q -z2 -d anoncvs@anoncvs.NetBSD.org:/cvsroot checkout -P pkgsrc"
-ssh -i Keys/ssh-keyfile -l root -p 2003 localhost "cd /usr && git -c http.sslVerify=false clone https://github.com/netbsd/pkgsrc"
 
 echo "***"
 echo "*** Installation done. Shutting VM down"

@@ -1,7 +1,6 @@
 #!/bin/bash
 
 
-
 date	# to make happy :) 
 echo "***"
 echo "*** Please perform the following steps:"
@@ -9,7 +8,7 @@ echo "*** [ ] Change the /etc/ssh/sshd_config to say PermitRootLogin yes"
 echo "*** Once the installation is finished, reboot the machine, and enter 'debian' here"
 echo "***"
 
-sh vmscripts/d_run_debian.sh
+sh vmscripts/3_run/d_run_debian.sh
 
 export H="."
 
@@ -52,16 +51,6 @@ echo "***"
 ssh -i Keys/ssh-keyfile -l root -p 2004 localhost "id"
 ssh -i Keys/ssh-keyfile -l user -p 2004 localhost "id"
 
-
-echo "***"
-echo "*** Installing packages"
-echo "***"
-ssh -i Keys/ssh-keyfile -l root -p 2004 localhost "apt-get -y update"
-ssh -i Keys/ssh-keyfile -l root -p 2004 localhost "DEBIAN_FRONTEND=noninteractive  apt-get -y install devscripts build-essential"
-scp -r -i Keys/ssh-keyfile -l root -P 2004 $HOME/.gnupg localhost:
-#ssh -i Keys/ssh-keyfile -l root -p 2004 localhost "( echo 'yes' ; echo '2' ) | apt -y upgrade"
-#ssh -i Keys/ssh-keyfile -l root -p 2004 localhost "apt -y install apt-file doas"
-#ssh -i Keys/ssh-keyfile -l root -p 2004 localhost "apt-file update"
 
 echo "***"
 echo "*** Installation done. Shutting VM down"

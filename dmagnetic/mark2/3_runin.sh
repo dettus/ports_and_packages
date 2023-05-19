@@ -17,4 +17,5 @@ scp -i ../../VM_based/Keys/ssh-keyfile -P 2002 root@localhost:package_out.patch 
 scp -i ../../VM_based/Keys/ssh-keyfile -P 2003 root@localhost:package_out.patch netbsd_dmagnetic037.patch
 
 
-
+ls -l *.patch
+echo "*** You might want to connect to the debian VM and run dput.sh"
