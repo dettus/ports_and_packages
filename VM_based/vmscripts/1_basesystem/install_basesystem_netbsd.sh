@@ -43,7 +43,7 @@ echo "***"
 
  echo "*** ROOT ***"
  scp -P 2003 Keys/ssh-keyfile.pub root@localhost:.ssh/authorized_keys
- ssh -p 2003 -l root localhost "chown -R root:wheel /root"
+ ssh -p 2003 -l root localhost "/sbin/chown -R root:wheel /root"
  echo "*** USER ***"
  scp -P 2003 Keys/ssh-keyfile.pub user@localhost:.ssh/authorized_keys
 )
