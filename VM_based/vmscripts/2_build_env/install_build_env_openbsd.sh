@@ -2,8 +2,9 @@
 
 
 date # to make happy :)
-sleep 73
+pwd
 bash vmscripts/3_run/a_run_openbsd.sh 
+sleep 120
 
 echo "***"
 echo "*** Installing packages"
